@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>伴野崇生 研究ポータル | SFC AO対策</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif; background: #0f0f14; color: #e8e8f0; line-height: 1.7; }
+
+  .hero { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); padding: 60px 40px; border-bottom: 1px solid #2a3a5c; }
+  .hero-inner { max-width: 900px; margin: 0 auto; }
+  .label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #6a9fd8; margin-bottom: 12px; }
+  .hero h1 { font-size: 42px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+  .hero-sub { font-size: 16px; color: #8ab4d8; margin-bottom: 20px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { background: rgba(106,159,216,0.15); border: 1px solid rgba(106,159,216,0.3); color: #8ab4d8; padding: 4px 12px; border-radius: 20px; font-size: 12px; }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 40px; }
+
+  .section { margin-bottom: 50px; }
+  .section-title { font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: #6a9fd8; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #2a3a5c; }
+
+  .card { background: #1a1a2e; border: 1px solid #2a3a5c; border-radius: 8px; padding: 24px; margin-bottom: 16px; }
+  .card h3 { color: #8ab4d8; font-size: 16px; margin-bottom: 10px; }
+  .card p { color: #b8c8d8; font-size: 14px; }
+
+  .quote-block { background: linear-gradient(135deg, #1a2a3a, #1a1a2e); border-left: 3px solid #6a9fd8; padding: 20px 24px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+  .quote-block .quote-text { font-size: 15px; color: #d8e8f8; line-height: 1.8; font-style: italic; margin-bottom: 10px; }
+  .quote-block .quote-source { font-size: 12px; color: #6a9fd8; }
+
+  .pub-item { display: flex; gap: 16px; padding: 16px; border-bottom: 1px solid #1e2a3a; }
+  .pub-year { min-width: 48px; font-size: 13px; color: #6a9fd8; font-weight: 700; padding-top: 2px; }
+  .pub-content h4 { font-size: 14px; color: #d0e4f4; margin-bottom: 4px; }
+  .pub-content p { font-size: 13px; color: #7a9ab8; }
+
+  .give-take { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .give { background: linear-gradient(135deg, #1a2e1a, #1a1a2e); border: 1px solid #2a5c2a; border-radius: 8px; padding: 20px; }
+  .take { background: linear-gradient(135deg, #1a1a2e, #2e1a2e); border: 1px solid #4a2a5c; border-radius: 8px; padding: 20px; }
+  .give h3 { color: #6ad88a; font-size: 13px; letter-spacing: 2px; margin-bottom: 14px; }
+  .take h3 { color: #c86ad8; font-size: 13px; letter-spacing: 2px; margin-bottom: 14px; }
+  .give ul, .take ul { list-style: none; }
+  .give ul li, .take ul li { font-size: 14px; color: #b8c8b8; margin-bottom: 10px; padding-left: 16px; position: relative; }
+  .give ul li::before { content: '→'; position: absolute; left: 0; color: #6ad88a; }
+  .take ul li::before { content: '←'; position: absolute; left: 0; color: #c86ad8; }
+
+  .summary-box { background: linear-gradient(135deg, #1a2a3a, #161625); border: 1px solid #3a5a7a; border-radius: 12px; padding: 28px; }
+  .summary-box h3 { color: #8ab4d8; font-size: 15px; margin-bottom: 14px; }
+  .summary-box p { font-size: 14px; color: #b8c8d8; margin-bottom: 10px; }
+
+  .profile-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .profile-item { background: #1a1a2e; border: 1px solid #2a3a5c; border-radius: 8px; padding: 16px; }
+  .profile-item .pkey { font-size: 11px; color: #6a9fd8; letter-spacing: 1px; margin-bottom: 6px; }
+  .profile-item .pval { font-size: 14px; color: #d0e0f0; }
+
+  .alert { background: rgba(255,180,50,0.1); border: 1px solid rgba(255,180,50,0.3); border-radius: 8px; padding: 14px 18px; margin-bottom: 20px; }
+  .alert p { font-size: 13px; color: #f0c860; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="label">SFC 総合政策学部 / AO研究ポータル</div>
+    <h1>伴野 崇生</h1>
+    <div class="hero-sub">准教授（有期）/ Takao Tomono</div>
+    <div class="tags">
+      <span class="tag">難民支援</span>
+      <span class="tag">パターン・ランゲージ</span>
+      <span class="tag">日本語教育</span>
+      <span class="tag">多文化共生</span>
+      <span class="tag">支援者支援</span>
+      <span class="tag">暗黙知の言語化</span>
+      <span class="tag">文化心理学</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- PROFILE -->
+  <div class="section">
+    <div class="section-title">Profile</div>
+    <div class="alert"><p>⚠️ 有期の准教授（2024年9月着任）。契約状況は出願前に公式サイトで要確認。</p></div>
+    <div class="profile-grid">
+      <div class="profile-item"><div class="pkey">学位</div><div class="pval">博士（人間科学）立命館大学 2024年3月</div></div>
+      <div class="profile-item"><div class="pkey">修士</div><div class="pval">早稲田大学 日本語教育学 2006年3月</div></div>
+      <div class="profile-item"><div class="pkey">学士</div><div class="pval">慶應義塾大学 総合政策学部 2003年3月（SFC卒）</div></div>
+      <div class="profile-item"><div class="pkey">現職</div><div class="pval">慶應義塾大学総合政策学部 准教授（2024.9〜）</div></div>
+      <div class="profile-item"><div class="pkey">学会役職</div><div class="pval">日本語教育学会 副会長（2025.5〜）／調査・研究委員会委員長</div></div>
+      <div class="profile-item"><div class="pkey">資格</div><div class="pval">多文化間精神保健アドバイザー、HSK6級</div></div>
+    </div>
+  </div>
+
+  <!-- RESEARCH -->
+  <div class="section">
+    <div class="section-title">Research — 研究の核心</div>
+
+    <div class="card">
+      <h3>🔬 科研費プロジェクト（2023〜2028）</h3>
+      <p>「<strong>難民支援者のためのパターン・ランゲージの開発とその効果の検証</strong>」<br>
+      難民支援の現場に蓄積された暗黙知・経験知を「パターン」として言語化・体系化し、次の支援者に手渡す仕組みを構築する。支援者が孤立せず、知恵をつないでいける社会をつくることが目標。</p>
+    </div>
+
+    <div class="quote-block">
+      <div class="quote-text">「難民支援の現場において、支援者は経験を積むほど深くなる一方で、その知恵が組織や次世代に伝わらないという問題がある。パターン・ランゲージは、この暗黙知を言語化し、誰もが使える形に変換するための方法論である」</div>
+      <div class="quote-source">── 伴野崇生（科研費研究概要より）</div>
+    </div>
+
+    <div class="card">
+      <h3>📌 パターン・ランゲージとは</h3>
+      <p>建築家クリストファー・アレグザンダーが提唱した方法論。「繰り返し起きる問題に対する解決策」をパターンとして言語化し、共有・再利用できる知識体系にする。伴野はこれを難民支援・日本語教育の現場に応用している。</p>
+    </div>
+
+    <div class="quote-block">
+      <div class="quote-text">「外国人材との協働コミュニティをつくるためのパターン・ランゲージ」では、職場での相互理解・信頼構築・文化的摩擦の解消に繰り返し有効な実践パターンが収録されている。これらは現場の支援者が「なぜうまくいったか」を言語化したものであり、次の支援者が同様の状況に置かれた際の道標となる。</div>
+      <div class="quote-source">── 伴野崇生、黒田文彦ほか「外国人材との協働コミュニティをつくるためのパターン・ランゲージの全体像とその作成プロセス」筑波大学グローバルコミュニケーション教育センター日本語教育論集 38号（2023）</div>
+    </div>
+
+    <div class="quote-block">
+      <div class="quote-text">「難民日本語教育における専門家の〈わざ〉をパターン・ランゲージで記述することで、支援者の孤立を防ぎ、現場の知恵を社会の資産にすることができる。ネガティブ・ケイパビリティ（答えの出ない状況に耐え続ける力）は、難民支援者が持つべき中核的な資質であり、それ自体がパターンとして伝承されるべき価値を持つ」</div>
+      <div class="quote-source">── 伴野崇生「難民日本語教育における『ネガティブ・ケイパビリティ』の意義と課題——専門家の〈わざ〉のパターン・ランゲージによる記述」対遇コミュニケーション研究（2025）</div>
+    </div>
+  </div>
+
+  <!-- PUBLICATIONS -->
+  <div class="section">
+    <div class="section-title">Publications — 主要著書・論文</div>
+    <div class="pub-item"><div class="pub-year">2025</div><div class="pub-content"><h4>「難民日本語教育における『ネガティブ・ケイパビリティ』の意義と課題」</h4><p>対遇コミュニケーション研究 ／ パターン・ランゲージ×難民支援の最新論文</p></div></div>
+    <div class="pub-item"><div class="pub-year">2025</div><div class="pub-content"><h4>『現代日本語教育ハンドブック』（共編著）</h4><p>日本語教育学会監修 ／ 難民・移民支援の最新知見を収録</p></div></div>
+    <div class="pub-item"><div class="pub-year">2024</div><div class="pub-content"><h4>『文化心理学への招待』（共著）</h4><p>誠信書房 ／ Auto-TEM（複線径路等至性モデリング）による質的分析</p></div></div>
+    <div class="pub-item"><div class="pub-year">2023</div><div class="pub-content"><h4>「外国人材との協働コミュニティをつくるためのパターン・ランゲージの全体像とその作成プロセス」</h4><p>筑波大学グローバルコミュニケーション教育センター日本語教育論集 38号 ／ 黒田文彦ほかと共著</p></div></div>
+    <div class="pub-item"><div class="pub-year">2023</div><div class="pub-content"><h4>「難民支援としての日本語教育」</h4><p>小出記念日本語教育学会論文集 ／ 現場実践の理論化</p></div></div>
+    <div class="pub-item"><div class="pub-year">2023</div><div class="pub-content"><h4>「難民を対象とした日本語教育実践者の自己形成・成長過程」</h4><p>社会構想研究 ／ Auto-TEM分析による支援者の成長プロセス研究</p></div></div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="section">
+    <div class="section-title">Summary — 3分でわかる伴野研究室</div>
+    <div class="summary-box">
+      <h3>💡 伴野崇生が問いかけていること</h3>
+      <p><strong>「支援の現場には宝が眠っている。でもその宝は誰にも伝わらずに消えていく」</strong></p>
+      <p>難民を支える人々（支援者）は経験を積むほど深い知恵を持つ。しかしその知恵は「言語化されないまま」個人の中に留まり、次の支援者には伝わらない。その結果、支援者は孤立し、疲弊する。</p>
+      <p>伴野は「パターン・ランゲージ」という方法で、この暗黙知を社会の資産に変えようとしている。「繰り返し有効だった支援の動き」をパターンとして言語化し、誰もが使えるツールにする。</p>
+      <p><strong>要するに：孤独を生む「言葉にならない断絶」を、言語化によって解消する研究。</strong></p>
+    </div>
+  </div>
+
+  <!-- GIVE & TAKE -->
+  <div class="section">
+    <div class="section-title">Give &amp; Take — 渡辺瑛太との接続</div>
+    <div class="give-take">
+      <div class="give">
+        <h3>GIVE → 渡辺が伴野ゼミに持ち込めるもの</h3>
+        <ul>
+          <li>5団体へのインタビューで得た「外国人労働者の孤独構造」の一次データ</li>
+          <li>入国後講習センター訪問という現場経験（制度の最前線）</li>
+          <li>トモスマの開発で生まれる「技能実習生が孤独を感じた瞬間」のユーザーリサーチ</li>
+          <li>Claude APIを使ったAI支援ツールの開発経験（パターンのデジタル化の可能性）</li>
+          <li>200人の組織を「前提の言語化」で動かした実践知（これ自体がパターン化できる）</li>
+        </ul>
+      </div>
+      <div class="take">
+        <h3>TAKE ← 伴野ゼミから学べること</h3>
+        <ul>
+          <li>暗黙知をパターンとして言語化する方法論（インタビュー素材を体系化できる）</li>
+          <li>Auto-TEM（複線径路等至性モデリング）による質的分析スキル</li>
+          <li>支援者の孤立という「孤独の連鎖」を断つ設計思想</li>
+          <li>難民・移民研究の学術的フレームワーク</li>
+          <li>日本語教育学会ネットワークを通じた現場連携</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 志望理由書接続 -->
+  <div class="section">
+    <div class="section-title">AO接続 — 志望理由書での使い方</div>
+    <div class="card">
+      <h3>✍️ 推奨フレーズ（引用を活かした接続）</h3>
+      <p style="margin-top:10px;">「伴野崇生准教授が開発を進める難民支援者のためのパターン・ランゲージは、現場の暗黙知を社会の資産に変えるための方法論だ。私がインタビューで積み上げた『外国人労働者の孤独構造』の一次データを、このパターン・ランゲージの方法で体系化し、次の支援者・次の企業に手渡せる知識に昇華させたい。伴野研究室は、私の現場経験を学術的な解決策に変換する場として最適だ。」</p>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

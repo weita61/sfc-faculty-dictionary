@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>宮垣元 研究ポータル | SFC AO対策</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif; background: #0f0f14; color: #e8e8f0; line-height: 1.7; }
+
+  .hero { background: linear-gradient(135deg, #1a1a2e 0%, #1a2e1a 50%, #2e2a0a 100%); padding: 60px 40px; border-bottom: 1px solid #3a5c2a; }
+  .hero-inner { max-width: 900px; margin: 0 auto; }
+  .label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #8ad86a; margin-bottom: 12px; }
+  .hero h1 { font-size: 42px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+  .hero-sub { font-size: 16px; color: #b4d8a0; margin-bottom: 20px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { background: rgba(138,216,106,0.12); border: 1px solid rgba(138,216,106,0.3); color: #b4d8a0; padding: 4px 12px; border-radius: 20px; font-size: 12px; }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 40px; }
+  .section { margin-bottom: 50px; }
+  .section-title { font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: #8ad86a; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #2a3c1a; }
+
+  .card { background: #1a1a2e; border: 1px solid #2a3c1a; border-radius: 8px; padding: 24px; margin-bottom: 16px; }
+  .card h3 { color: #b4d8a0; font-size: 16px; margin-bottom: 10px; }
+  .card p { color: #b0c8a0; font-size: 14px; }
+
+  .quote-block { background: linear-gradient(135deg, #1a2a1a, #1a1a2e); border-left: 3px solid #8ad86a; padding: 20px 24px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+  .quote-block .quote-text { font-size: 15px; color: #d8f0d0; line-height: 1.8; font-style: italic; margin-bottom: 10px; }
+  .quote-block .quote-source { font-size: 12px; color: #8ad86a; }
+
+  .pub-item { display: flex; gap: 16px; padding: 16px; border-bottom: 1px solid #1a2a1a; }
+  .pub-year { min-width: 48px; font-size: 13px; color: #8ad86a; font-weight: 700; padding-top: 2px; }
+  .pub-content h4 { font-size: 14px; color: #d0f0c0; margin-bottom: 4px; }
+  .pub-content p { font-size: 13px; color: #90b080; }
+
+  .give-take { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .give { background: linear-gradient(135deg, #1a2e1a, #1a1a2e); border: 1px solid #2a5c2a; border-radius: 8px; padding: 20px; }
+  .take { background: linear-gradient(135deg, #2e2a1a, #1a1a2e); border: 1px solid #5c4a1a; border-radius: 8px; padding: 20px; }
+  .give h3 { color: #6ad88a; font-size: 13px; letter-spacing: 2px; margin-bottom: 14px; }
+  .take h3 { color: #d8c86a; font-size: 13px; letter-spacing: 2px; margin-bottom: 14px; }
+  .give ul, .take ul { list-style: none; }
+  .give ul li, .take ul li { font-size: 14px; color: #b8c8a8; margin-bottom: 10px; padding-left: 16px; position: relative; }
+  .give ul li::before { content: '→'; position: absolute; left: 0; color: #6ad88a; }
+  .take ul li::before { content: '←'; position: absolute; left: 0; color: #d8c86a; }
+
+  .summary-box { background: linear-gradient(135deg, #1a2a1a, #161620); border: 1px solid #3a5a2a; border-radius: 12px; padding: 28px; }
+  .summary-box h3 { color: #b4d8a0; font-size: 15px; margin-bottom: 14px; }
+  .summary-box p { font-size: 14px; color: #b0c8a0; margin-bottom: 10px; }
+
+  .profile-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .profile-item { background: #1a1a2e; border: 1px solid #2a3c1a; border-radius: 8px; padding: 16px; }
+  .profile-item .pkey { font-size: 11px; color: #8ad86a; letter-spacing: 1px; margin-bottom: 6px; }
+  .profile-item .pval { font-size: 14px; color: #d0e8c0; }
+
+  .book-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 10px; }
+  .book-card { background: #141e14; border: 1px solid #2a4a1a; border-radius: 8px; padding: 16px; }
+  .book-card .book-year { font-size: 11px; color: #8ad86a; margin-bottom: 6px; }
+  .book-card h4 { font-size: 14px; color: #c0e0b0; margin-bottom: 6px; line-height: 1.4; }
+  .book-card p { font-size: 12px; color: #90b080; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="label">SFC 総合政策学部 / AO研究ポータル</div>
+    <h1>宮垣 元</h1>
+    <div class="hero-sub">教授 / Gen Miyagaki</div>
+    <div class="tags">
+      <span class="tag">NPO・非営利組織論</span>
+      <span class="tag">社会ネットワーク論</span>
+      <span class="tag">コミュニティ論</span>
+      <span class="tag">経済社会学</span>
+      <span class="tag">社会起業</span>
+      <span class="tag">ソーシャル・キャピタル</span>
+      <span class="tag">社会的正義</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- PROFILE -->
+  <div class="section">
+    <div class="section-title">Profile</div>
+    <div class="profile-grid">
+      <div class="profile-item"><div class="pkey">職位</div><div class="pval">教授（2014年〜）</div></div>
+      <div class="profile-item"><div class="pkey">学位</div><div class="pval">博士（政策・メディア）慶應義塾大学 2001年12月</div></div>
+      <div class="profile-item"><div class="pkey">学士</div><div class="pval">慶應義塾大学 環境情報学部 1994年（SFC1期生世代）</div></div>
+      <div class="profile-item"><div class="pkey">海外研究</div><div class="pval">カリフォルニア大学バークレー校 客員研究員（2005-2006）</div></div>
+      <div class="profile-item"><div class="pkey">前職</div><div class="pval">甲南大学文学部社会学科 教授（2010-2014）</div></div>
+      <div class="profile-item"><div class="pkey">現行科研費</div><div class="pval">「社会的正義実現メカニズムの学際的解明」国際共同研究（2024-2030）代表</div></div>
+    </div>
+  </div>
+
+  <!-- RESEARCH -->
+  <div class="section">
+    <div class="section-title">Research — 研究の核心</div>
+
+    <div class="card">
+      <h3>🔬 NPOとコミュニティの相互作用</h3>
+      <p>「NPOはなぜ生まれ、なぜある地域では根付き、別の地域では消えるのか」。社会ネットワーク分析の手法を使い、NPOと地域コミュニティが互いを強化し合う（あるいは壊し合う）メカニズムを実証的に解明している。</p>
+    </div>
+
+    <div class="quote-block">
+      <div class="quote-text">「コミュニティとは、単に地理的に近接した人々の集まりではない。共通の問題意識と、それに向き合うための関係的資源（ソーシャル・キャピタル）の蓄積によって形成される。NPOはこの関係的資源の生産・流通・再配分を担う組織として機能する」</div>
+      <div class="quote-source">── 宮垣元「コミュニティと総合政策」Keio SFC Journal 21(1): 66-90（2021）</div>
+    </div>
+
+    <div class="card">
+      <h3>🌱 社会起業とイノベーション</h3>
+      <p>市場でも行政でも解決できない社会問題を、新たな組織形態（社会起業）によって解決しようとする試み。宮垣は「なぜある社会起業は成功し、別の試みは失敗するのか」という問いを、組織の多様性・ネットワーク構造・社会的正義の観点から分析している。</p>
+    </div>
+
+    <div class="quote-block">
+      <div class="quote-text">「NPOにおける関係的資源とは、金銭的資源や人的資源に還元できない、組織間・組織内の信頼・互恵性・ネットワークである。この関係的資源こそが、NPOの持続可能性と社会的インパクトの最大の決定因であることが実証的に示されている」</div>
+      <div class="quote-source">── 宮垣元「NPOにおける関係的資源の効果」経済社会学会年報 39号（2017）</div>
+    </div>
+
+    <div class="card">
+      <h3>⚖️ 社会的正義の実現メカニズム（2024〜2030）</h3>
+      <p>現在進行中の国際共同研究。「社会的正義はどのような条件のもとで実現されるか」を、経済学・社会学・政策科学の学際的アプローチで解明する。外国人労働者の待遇改善・コミュニティ統合は、この研究の中心課題のひとつに位置づけられる。</p>
+    </div>
+
+    <div class="quote-block">
+      <div class="quote-text">「ポスト震災期のコミュニティ研究が示したのは、NPOネットワークの密度と多様性が、コミュニティの回復力（レジリエンス）を左右するという事実である。孤立した個人ではなく、つながりの設計こそが社会問題解決の核心である」</div>
+      <div class="quote-source">── 宮垣元「ポスト震災期コミュニティにおけるNPOネットワークの構造変動と地域間比較分析」科研費研究成果報告書（2023）</div>
+    </div>
+  </div>
+
+  <!-- PUBLICATIONS -->
+  <div class="section">
+    <div class="section-title">Publications — 主要著書・論文</div>
+    <div class="book-grid">
+      <div class="book-card"><div class="book-year">2016</div><h4>『コミュニティの再生——経済と社会の潜在力を活かす』</h4><p>中央経済社（共著）／ 経済・社会の二側面からコミュニティを再設計する論考</p></div>
+      <div class="book-card"><div class="book-year">2010</div><h4>『社会ネットワークのリサーチ・メソッド——つながりを調査する』</h4><p>ミネルヴァ書房（共著）／ ネットワーク分析の実践ガイド</p></div>
+      <div class="book-card"><div class="book-year">2009</div><h4>『コミュニティ科学——技術と社会のイノベーション』</h4><p>勁草書房（共著）／ テクノロジーとコミュニティの接点</p></div>
+      <div class="book-card"><div class="book-year">2003</div><h4>『ヒューマンサービスと信頼——福祉NPOの理論と実証』</h4><p>慶應義塾大学出版会 ／ NPO論の基礎理論書</p></div>
+    </div>
+    <br>
+    <div class="pub-item"><div class="pub-year">2022</div><div class="pub-content"><h4>「NPO法人における収益構造の15年間の変容」</h4><p>ノンプロフィット・レビュー</p></div></div>
+    <div class="pub-item"><div class="pub-year">2021</div><div class="pub-content"><h4>「コミュニティと総合政策」</h4><p>Keio SFC Journal 21(1): 66-90</p></div></div>
+    <div class="pub-item"><div class="pub-year">2019</div><div class="pub-content"><h4>「民間非営利組織におけるネットワーク構造と協働」</h4><p>国民経済雑誌 219(5)</p></div></div>
+    <div class="pub-item"><div class="pub-year">2017</div><div class="pub-content"><h4>「NPOにおける関係的資源の効果」</h4><p>経済社会学会年報 (39)</p></div></div>
+    <div class="pub-item"><div class="pub-year">2014</div><div class="pub-content"><h4>「地域コミュニティとNPOの相互作用」</h4><p>経済社会学会年報 (35)</p></div></div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="section">
+    <div class="section-title">Summary — 3分でわかる宮垣研究室</div>
+    <div class="summary-box">
+      <h3>💡 宮垣元が問いかけていること</h3>
+      <p><strong>「社会問題を解決するのは、制度でも市場でもなく、つながりだ」</strong></p>
+      <p>阪神・淡路大震災の後、コミュニティとNPOがどう動いたかを20年以上追い続けてきた。そこから見えてきたのは「関係的資源（ソーシャル・キャピタル）を持つ組織は生き残り、孤立した組織は消えていく」という法則。</p>
+      <p>社会起業もNPOも、結局は「信頼のネットワーク」をどう設計するかの問いに行き着く。宮垣の研究室は、その設計の理論と実証を両輪で行う。</p>
+      <p><strong>要するに：「コミュニティをつくる技術」を経済社会学で解明する研究。これはトモスマの設計そのもの。</strong></p>
+    </div>
+  </div>
+
+  <!-- GIVE & TAKE -->
+  <div class="section">
+    <div class="section-title">Give &amp; Take — 渡辺瑛太との接続</div>
+    <div class="give-take">
+      <div class="give">
+        <h3>GIVE → 渡辺が宮垣ゼミに持ち込めるもの</h3>
+        <ul>
+          <li>トモスマ（2026年3月設立、現在7名）という進行中のNPO的組織そのものを研究対象として提供</li>
+          <li>外国人労働者コミュニティの課題についての一次データ（5団体インタビュー）</li>
+          <li>ぽりふぇすの組織運営で直面した「金銭トラブル・役割曖昧さ・協賛獲得」の生の課題</li>
+          <li>文化祭委員長として「200人が自律的に動ける組織設計」を実践した経験</li>
+          <li>テクノロジー（アプリ・デバイス）とコミュニティを組み合わせた新しい実装モデルの可能性</li>
+        </ul>
+      </div>
+      <div class="take">
+        <h3>TAKE ← 宮垣ゼミから学べること</h3>
+        <ul>
+          <li>社会ネットワーク分析の手法（トモスマのメンバー間関係を可視化・分析できる）</li>
+          <li>NPOの持続可能性の条件（なぜ学生団体の多くは消えるのか、その理論的解答）</li>
+          <li>「関係的資源」という概念（金銭・人材以外の組織の強みを測る指標）</li>
+          <li>社会的正義の実現メカニズム（外国人労働者支援を正義論で位置づける）</li>
+          <li>質的調査・フィールドワークの方法論（地域協働とフィールドワークの授業）</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 志望理由書接続 -->
+  <div class="section">
+    <div class="section-title">AO接続 — 志望理由書での使い方</div>
+    <div class="card">
+      <h3>✍️ 推奨フレーズ（引用を活かした接続）</h3>
+      <p style="margin-top:10px;">「宮垣元教授は『孤立した個人ではなく、つながりの設計こそが社会問題解決の核心である』と論じている。私が設立したトモスマは、外国人労働者の孤独を解消するためのコミュニティ設計を実践するNPO的組織だ。宮垣研究室でソーシャル・キャピタル理論とネットワーク分析の手法を習得し、トモスマという進行中の実験を学術的に解剖することで、孤独を生まないコミュニティ設計の普遍的モデルを構築したい。」</p>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

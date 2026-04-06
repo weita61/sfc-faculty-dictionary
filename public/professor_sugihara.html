@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>杉原由美 研究ポータル | SFC AO対策</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif; background: #0f0f14; color: #e8e8f0; line-height: 1.7; }
+
+  .hero { background: linear-gradient(135deg, #1a1a2e 0%, #2e1a1a 50%, #3a1a2e 100%); padding: 60px 40px; border-bottom: 1px solid #5c2a3a; }
+  .hero-inner { max-width: 900px; margin: 0 auto; }
+  .label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #d86a8a; margin-bottom: 12px; }
+  .hero h1 { font-size: 42px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+  .hero-sub { font-size: 16px; color: #d8a0b4; margin-bottom: 20px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { background: rgba(216,106,138,0.15); border: 1px solid rgba(216,106,138,0.3); color: #d8a0b4; padding: 4px 12px; border-radius: 20px; font-size: 12px; }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 40px; }
+  .section { margin-bottom: 50px; }
+  .section-title { font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: #d86a8a; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #3a2a3a; }
+
+  .card { background: #1a1a2e; border: 1px solid #3a2a3a; border-radius: 8px; padding: 24px; margin-bottom: 16px; }
+  .card h3 { color: #d8a0b4; font-size: 16px; margin-bottom: 10px; }
+  .card p { color: #c8b0b8; font-size: 14px; }
+
+  .quote-block { background: linear-gradient(135deg, #2a1a2a, #1a1a2e); border-left: 3px solid #d86a8a; padding: 20px 24px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+  .quote-block .quote-text { font-size: 15px; color: #f0d8e8; line-height: 1.8; font-style: italic; margin-bottom: 10px; }
+  .quote-block .quote-source { font-size: 12px; color: #d86a8a; }
+
+  .pub-item { display: flex; gap: 16px; padding: 16px; border-bottom: 1px solid #2a1a2a; }
+  .pub-year { min-width: 48px; font-size: 13px; color: #d86a8a; font-weight: 700; padding-top: 2px; }
+  .pub-content h4 { font-size: 14px; color: #f0d8e8; margin-bottom: 4px; }
+  .pub-content p { font-size: 13px; color: #b090a0; }
+
+  .give-take { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .give { background: linear-gradient(135deg, #1a2e1a, #1a1a2e); border: 1px solid #2a5c2a; border-radius: 8px; padding: 20px; }
+  .take { background: linear-gradient(135deg, #2e1a1a, #1a1a2e); border: 1px solid #5c2a2a; border-radius: 8px; padding: 20px; }
+  .give h3 { color: #6ad88a; font-size: 13px; letter-spacing: 2px; margin-bottom: 14px; }
+  .take h3 { color: #d88a6a; font-size: 13px; letter-spacing: 2px; margin-bottom: 14px; }
+  .give ul, .take ul { list-style: none; }
+  .give ul li, .take ul li { font-size: 14px; color: #c0c8b8; margin-bottom: 10px; padding-left: 16px; position: relative; }
+  .give ul li::before { content: '→'; position: absolute; left: 0; color: #6ad88a; }
+  .take ul li::before { content: '←'; position: absolute; left: 0; color: #d88a6a; }
+
+  .summary-box { background: linear-gradient(135deg, #2a1a2a, #161620); border: 1px solid #5a3a5a; border-radius: 12px; padding: 28px; }
+  .summary-box h3 { color: #d8a0b4; font-size: 15px; margin-bottom: 14px; }
+  .summary-box p { font-size: 14px; color: #c8b0c0; margin-bottom: 10px; }
+
+  .profile-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .profile-item { background: #1a1a2e; border: 1px solid #3a2a3a; border-radius: 8px; padding: 16px; }
+  .profile-item .pkey { font-size: 11px; color: #d86a8a; letter-spacing: 1px; margin-bottom: 6px; }
+  .profile-item .pval { font-size: 14px; color: #e8d0d8; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="label">SFC 総合政策学部 / AO研究ポータル</div>
+    <h1>杉原 由美</h1>
+    <div class="hero-sub">准教授 / Yumi Sugihara</div>
+    <div class="tags">
+      <span class="tag">やさしい日本語</span>
+      <span class="tag">多言語多文化共生</span>
+      <span class="tag">批判的言語文化教育</span>
+      <span class="tag">アイデンティティ形成</span>
+      <span class="tag">Project SUMICA</span>
+      <span class="tag">トランスランゲージング</span>
+      <span class="tag">社会的包摂</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- PROFILE -->
+  <div class="section">
+    <div class="section-title">Profile</div>
+    <div class="profile-grid">
+      <div class="profile-item"><div class="pkey">職位</div><div class="pval">准教授（総合政策学部）</div></div>
+      <div class="profile-item"><div class="pkey">ORCID</div><div class="pval">0009-0008-1715-7780</div></div>
+      <div class="profile-item"><div class="pkey">研究室</div><div class="pval"><a href="https://sugihara.sfc.keio.ac.jp/" style="color:#d86a8a;">sugihara.sfc.keio.ac.jp</a></div></div>
+      <div class="profile-item"><div class="pkey">学会</div><div class="pval">異文化間教育学会 研究委員（2025〜2027）／日本語教育学会 審査・運営協力員</div></div>
+    </div>
+  </div>
+
+  <!-- RESEARCH -->
+  <div class="section">
+    <div class="section-title">Research — 研究の核心</div>
+
+    <div class="card">
+      <h3>🔬 批判的言語文化教育（Critical Language and Culture Education）</h3>
+      <p>「言語は中立ではない」という立場から、どの言語・文化が「普通」とされ、何が「外国人」として排除されるかを問い直す。外国人が「外国人扱いされる」構造そのものを教育の中で解体することを目指す。</p>
+    </div>
+
+    <div class="quote-block">
+      <div class="quote-text">「文化的同質性に関する支配的言説が検討されることは少ない日本のバイリンガル異文化コミュニケーション教室において、自己反省性がいかに現れるかを探究する。（中略）学習者が自らの言語使用と文化的前提を批判的に問い直す実践が、真のインターカルチュラルな対話の土台となる」</div>
+      <div class="quote-source">── 杉原由美、Ohri R.「Learner self-reflexivity in a Japanese critical intercultural communication classroom」Intercultural Education（2025）</div>
+    </div>
+
+    <div class="card">
+      <h3>🏠 Project SUMICA — 外国籍住民の住居問題</h3>
+      <p>外国籍を持つ人々が日本で住居を確保することを阻む構造的障壁を研究するプロジェクト。言語的アクセシビリティの欠如が、住居という「生存基盤」を脅かすことを明らかにしている。</p>
+    </div>
+
+    <div class="quote-block">
+      <div class="quote-text">「多様な日本語使用者を大学の授業に包摂するためには、言語的多数派（日本語母語話者）への働きかけが不可欠である。少数派の言語・文化実践を「正常化」するのではなく、多数派が自らの前提を問い直す教育設計が求められる」</div>
+      <div class="quote-source">── 杉原由美「多様な日本語使用者を包摂するための言語的多数派への働きかけの検討——大学講義の社会的インパクト評価から」（2019）</div>
+    </div>
+
+    <div class="card">
+      <h3>🌀 トランスランゲージング（Translanguaging）</h3>
+      <p>「日本語」「英語」という言語の境界を超えて、複数の言語資源を流動的に使い分ける実践。外国人が「正しい日本語を話せない」という評価軸そのものを問い直し、多様な言語実践が価値を持つ社会設計を研究している。</p>
+    </div>
+
+    <div class="quote-block">
+      <div class="quote-text">「批判的多言語主義とは、単に複数言語を尊重するという立場ではなく、どの言語が権力を持ち、どの言語が周縁化されているかという問いを中心に据える立場である。日本においては、英語と日本語が他言語を排除する形で機能しており、技能実習生の母語はほぼ完全に不可視化されている」</div>
+      <div class="quote-source">── 杉原由美、藤田護「新しい批判的多言語主義と多言語教育への含意——SFC/慶應での実践に基づいて」KEIO SFC JOURNAL 19(2)（2020）</div>
+    </div>
+
+    <div class="card">
+      <h3>📝 「やさしい日本語」と「アクティブ・ナレッジ」</h3>
+      <p>外国人が情報にアクセスできない原因の一つは、行政・職場の言語が難解すぎることにある。「やさしい日本語」はその障壁を下げる手段。杉原はさらに、文化的差異に関する「クリティカルリテラシー（批判的読解力）」を育てる「アクティブ・ナレッジ」という概念を提唱している。</p>
+    </div>
+  </div>
+
+  <!-- PUBLICATIONS -->
+  <div class="section">
+    <div class="section-title">Publications — 主要著書・論文</div>
+    <div class="pub-item"><div class="pub-year">2025</div><div class="pub-content"><h4>「Learner self-reflexivity in a Japanese critical intercultural communication classroom」</h4><p>Intercultural Education ／ 共著：Ohri R., Sugihara Y. ／ 査読付き国際誌</p></div></div>
+    <div class="pub-item"><div class="pub-year">2025</div><div class="pub-content"><h4>「Liquid Crystals: A Phenomenological Approach to Complexity of University Students' Identity Formation Through Translanguaging Perspective」</h4><p>Applied Linguistics ／ 共著：Hori Y., Sugihara Y., Wei L.</p></div></div>
+    <div class="pub-item"><div class="pub-year">2024</div><div class="pub-content"><h4>「Becoming Japanese (Only) in Transnational Spaces and Systems」</h4><p>日系ベトナム混合家庭学生の言語イデオロギー研究</p></div></div>
+    <div class="pub-item"><div class="pub-year">2023</div><div class="pub-content"><h4>『言語文化とコミュニケーション』（共編著）</h4><p>慶應義塾大学出版会 ／ 第6章「日本語コミュニティの再想像」担当</p></div></div>
+    <div class="pub-item"><div class="pub-year">2020</div><div class="pub-content"><h4>「新しい批判的多言語主義と多言語教育への含意」</h4><p>KEIO SFC JOURNAL 19(2) ／ 共著：藤田護</p></div></div>
+    <div class="pub-item"><div class="pub-year">2019</div><div class="pub-content"><h4>「多様な日本語使用者を包摂するための言語的多数派への働きかけの検討」</h4><p>大学講義の社会的インパクト評価</p></div></div>
+    <div class="pub-item"><div class="pub-year">2010</div><div class="pub-content"><h4>『日本語学習のエスノメソドロジー』</h4><p>勁草書房 ／ 「外国人／日本人」カテゴリー化の形成メカニズムを分析</p></div></div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="section">
+    <div class="section-title">Summary — 3分でわかる杉原研究室</div>
+    <div class="summary-box">
+      <h3>💡 杉原由美が問いかけていること</h3>
+      <p><strong>「なぜ外国人は日本で『外国人』のままでいなければならないのか」</strong></p>
+      <p>日本語が話せないから孤立するのではない。「その人の言語・文化が価値を持たない」という社会の前提が、孤立を生む。杉原はこの前提そのものを壊す教育・制度設計を研究している。</p>
+      <p>「やさしい日本語」は単純化ではなく、言語的障壁を意図的に設計し直すこと。Project SUMICAでは住居問題、教室研究ではアイデンティティ形成を扱う。すべてに共通するのは「言語が権力を持つ構造を問い直す」という姿勢。</p>
+      <p><strong>要するに：「言語化されない前提が人を排除する」という問いを、教育と制度設計で解決する研究。</strong></p>
+    </div>
+  </div>
+
+  <!-- GIVE & TAKE -->
+  <div class="section">
+    <div class="section-title">Give &amp; Take — 渡辺瑛太との接続</div>
+    <div class="give-take">
+      <div class="give">
+        <h3>GIVE → 渡辺が杉原ゼミに持ち込めるもの</h3>
+        <ul>
+          <li>5団体インタビューで収集した「職場で言語化されない前提が孤立を生む」の実例データ</li>
+          <li>入国後講習センターで見た「176時間の日本語教育」の現場観察</li>
+          <li>技能実習生側の視点：彼らが「孤独を感じた瞬間」の具体的エピソード</li>
+          <li>トモスマのアプリ開発で生まれる、外国人ユーザーの言語実践データ</li>
+          <li>ミラコエでの実践：「政治参加の言語的アクセシビリティ」という新たな研究角度</li>
+        </ul>
+      </div>
+      <div class="take">
+        <h3>TAKE ← 杉原ゼミから学べること</h3>
+        <ul>
+          <li>「言語イデオロギー」の分析枠組み（なぜある言語が優位に立つかを理論化）</li>
+          <li>エスノメソドロジー（現場の相互作用を精密に記述する方法）</li>
+          <li>やさしい日本語を活用した職場マニュアル・制度設計の方法論</li>
+          <li>クリティカルペダゴジー（「前提を疑わせる」教育デザインの技術）</li>
+          <li>Project SUMICAのネットワークを通じた外国籍住民支援の現場連携</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 志望理由書接続 -->
+  <div class="section">
+    <div class="section-title">AO接続 — 志望理由書での使い方</div>
+    <div class="card">
+      <h3>✍️ 推奨フレーズ（引用を活かした接続）</h3>
+      <p style="margin-top:10px;">「杉原由美准教授は『多様な日本語使用者を包摂するためには言語的多数派が自らの前提を問い直す必要がある』と論じている。私が5団体インタビューで直面した『言語化されない前提が技能実習生を孤立させる』という問いは、まさにこの多数派の無意識の言語実践によって生じている。杉原研究室のやさしい日本語とクリティカルリテラシーの知見を、外国人就労現場の職場マニュアル設計に実装したい。」</p>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
