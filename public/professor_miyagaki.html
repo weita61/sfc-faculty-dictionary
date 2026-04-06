@@ -4,70 +4,282 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>宮垣元 研究ポータル | SFC AO対策</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Noto+Sans+JP:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+  :root {
+    --accent: #15803d;
+    --accent-light: #f0fdf4;
+    --accent-mid: #86efac;
+    --text: #0f0f0f;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --bg: #fafafa;
+    --white: #ffffff;
+  }
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif; background: #f5f5f5; color: #1c1c1c; line-height: 1.7; }
+  html { scroll-behavior: smooth; }
 
-  .hero { background: #ffffff; border-top: 4px solid #16a34a; padding: 56px 40px 48px; border-bottom: 1px solid #e5e7eb; }
-  .hero-inner { max-width: 900px; margin: 0 auto; }
-  .label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #16a34a; margin-bottom: 12px; font-weight: 600; }
-  .hero h1 { font-size: 42px; font-weight: 700; color: #111827; margin-bottom: 6px; }
-  .hero-sub { font-size: 16px; color: #6b7280; margin-bottom: 20px; }
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  .hero {
+    background: var(--white);
+    padding: 80px 60px 64px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent-mid) 100%);
+  }
+  .hero::after {
+    content: '共生';
+    position: absolute;
+    right: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 160px;
+    font-weight: 700;
+    color: var(--accent-light);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(52px, 6vw, 80px);
+    font-weight: 900;
+    color: var(--text);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+  .hero-en {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--muted);
+    margin-bottom: 28px;
+  }
   .tags { display: flex; flex-wrap: wrap; gap: 8px; }
-  .tag { background: #f0fdf4; border: 1px solid #bbf7d0; color: #15803d; padding: 4px 12px; border-radius: 20px; font-size: 12px; }
+  .tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    background: var(--accent-light);
+    color: var(--accent);
+    padding: 5px 14px;
+    border-radius: 2px;
+    font-weight: 500;
+  }
 
-  .container { max-width: 900px; margin: 0 auto; padding: 40px; }
-  .section { margin-bottom: 50px; }
-  .section-title { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #16a34a; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #e5e7eb; font-weight: 700; }
+  .container { max-width: 860px; margin: 0 auto; padding: 64px 60px; }
+  .section { margin-bottom: 72px; }
 
-  .card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 24px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
-  .card h3 { color: #15803d; font-size: 15px; margin-bottom: 10px; }
-  .card p { color: #374151; font-size: 14px; }
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 28px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent-mid);
+  }
+  .section-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+  }
 
-  .quote-block { background: #f0fdf4; border-left: 3px solid #16a34a; padding: 20px 24px; margin: 16px 0; border-radius: 0 8px 8px 0; }
-  .quote-block .quote-text { font-size: 14px; color: #374151; line-height: 1.9; font-style: italic; margin-bottom: 10px; }
-  .quote-block .quote-source { font-size: 12px; color: #9ca3af; }
+  .card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 28px 32px;
+    margin-bottom: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+  .card h3 { font-size: 14px; font-weight: 700; color: var(--accent); margin-bottom: 12px; }
+  .card p { font-size: 14px; color: #374151; line-height: 1.85; }
 
-  .pub-item { display: flex; gap: 16px; padding: 16px; background: #ffffff; border: 1px solid #e5e7eb; border-top: none; }
-  .pub-item:first-of-type { border-radius: 8px 8px 0 0; border-top: 1px solid #e5e7eb; }
-  .pub-item:last-of-type { border-radius: 0 0 8px 8px; }
-  .pub-year { min-width: 48px; font-size: 13px; color: #16a34a; font-weight: 700; padding-top: 2px; }
-  .pub-content h4 { font-size: 14px; color: #111827; margin-bottom: 4px; }
-  .pub-content p { font-size: 13px; color: #9ca3af; }
+  .quote-block {
+    position: relative;
+    padding: 32px 36px 32px 52px;
+    margin: 20px 0;
+    background: var(--white);
+    border-left: 3px solid var(--accent);
+  }
+  .quote-block::before {
+    content: '"';
+    font-family: 'Playfair Display', serif;
+    font-size: 80px;
+    line-height: 1;
+    color: var(--accent-light);
+    position: absolute;
+    left: 16px;
+    top: 20px;
+  }
+  .quote-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 14.5px;
+    font-style: italic;
+    color: #1f2937;
+    line-height: 1.9;
+    margin-bottom: 14px;
+  }
+  .quote-source {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.03em;
+  }
 
-  .give-take { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-  .give { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 20px; }
-  .take { background: #fefce8; border: 1px solid #fef08a; border-radius: 8px; padding: 20px; }
-  .give h3 { color: #15803d; font-size: 12px; letter-spacing: 2px; margin-bottom: 14px; font-weight: 700; }
-  .take h3 { color: #a16207; font-size: 12px; letter-spacing: 2px; margin-bottom: 14px; font-weight: 700; }
+  .pub-list { border: 1px solid var(--border); border-radius: 4px; overflow: hidden; background: var(--white); }
+  .pub-item {
+    display: flex;
+    gap: 20px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s;
+  }
+  .pub-item:last-child { border-bottom: none; }
+  .pub-item:hover { background: var(--accent-light); }
+  .pub-year {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--accent);
+    min-width: 44px;
+    padding-top: 2px;
+  }
+  .pub-content h4 { font-size: 13.5px; font-weight: 500; color: var(--text); margin-bottom: 3px; }
+  .pub-content p { font-size: 12px; color: var(--muted); }
+
+  .book-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 16px; }
+  .book-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 20px;
+    transition: transform 0.2s ease;
+  }
+  .book-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.05); }
+  .book-year {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .book-card h4 { font-size: 13px; color: var(--text); margin-bottom: 6px; line-height: 1.5; font-weight: 500; }
+  .book-card p { font-size: 12px; color: var(--muted); }
+
+  .give-take { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .give { background: #f0fdf4; border: 1px solid #86efac; border-radius: 4px; padding: 24px; }
+  .take { background: #fefce8; border: 1px solid #fde047; border-radius: 4px; padding: 24px; }
+  .give h3, .take h3 {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+  .give h3 { color: #15803d; }
+  .take h3 { color: #a16207; }
   .give ul, .take ul { list-style: none; }
-  .give ul li, .take ul li { font-size: 14px; color: #374151; margin-bottom: 10px; padding-left: 18px; position: relative; }
-  .give ul li::before { content: '→'; position: absolute; left: 0; color: #16a34a; }
-  .take ul li::before { content: '←'; position: absolute; left: 0; color: #ca8a04; }
+  .give li, .take li {
+    font-size: 13px;
+    color: #374151;
+    padding-left: 18px;
+    position: relative;
+    margin-bottom: 10px;
+    line-height: 1.65;
+  }
+  .give li::before { content: '→'; position: absolute; left: 0; color: #16a34a; font-family: 'DM Mono', monospace; }
+  .take li::before { content: '←'; position: absolute; left: 0; color: #ca8a04; font-family: 'DM Mono', monospace; }
 
-  .summary-box { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 28px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
-  .summary-box h3 { color: #15803d; font-size: 15px; margin-bottom: 14px; }
-  .summary-box p { font-size: 14px; color: #374151; margin-bottom: 10px; }
+  .summary-box {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 36px 40px;
+  }
+  .summary-box::before { content: '💡'; font-size: 28px; display: block; margin-bottom: 16px; }
+  .summary-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 16px;
+    line-height: 1.4;
+  }
+  .summary-box p { font-size: 14px; color: #374151; margin-bottom: 12px; }
 
   .profile-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
-  .profile-item { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px; }
-  .profile-item .pkey { font-size: 11px; color: #16a34a; letter-spacing: 1px; margin-bottom: 6px; font-weight: 600; }
-  .profile-item .pval { font-size: 14px; color: #1c1c1c; }
+  .profile-item { background: var(--white); border: 1px solid var(--border); border-radius: 4px; padding: 16px 20px; }
+  .pkey {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+  .pval { font-size: 13px; color: var(--text); line-height: 1.6; }
 
-  .book-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 10px; }
-  .book-card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
-  .book-card .book-year { font-size: 11px; color: #16a34a; margin-bottom: 6px; font-weight: 600; }
-  .book-card h4 { font-size: 14px; color: #111827; margin-bottom: 6px; line-height: 1.4; }
-  .book-card p { font-size: 12px; color: #9ca3af; }
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 640px) {
+    .hero { padding: 60px 24px 48px; }
+    .hero::after { display: none; }
+    .container { padding: 48px 24px; }
+    .give-take { grid-template-columns: 1fr; }
+    .profile-grid { grid-template-columns: 1fr; }
+    .book-grid { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
 
 <div class="hero">
   <div class="hero-inner">
-    <div class="label">SFC 総合政策学部 / AO研究ポータル</div>
+    <div class="hero-label">SFC 総合政策学部 &nbsp;/&nbsp; AO Research Portal</div>
     <h1>宮垣 元</h1>
-    <div class="hero-sub">教授 / Gen Miyagaki</div>
+    <div class="hero-en">Gen Miyagaki &nbsp;— 教授</div>
     <div class="tags">
       <span class="tag">NPO・非営利組織論</span>
       <span class="tag">社会ネットワーク論</span>
@@ -82,9 +294,11 @@
 
 <div class="container">
 
-  <!-- PROFILE -->
-  <div class="section">
-    <div class="section-title">Profile</div>
+  <div class="section reveal">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <span class="section-title">Profile</span>
+    </div>
     <div class="profile-grid">
       <div class="profile-item"><div class="pkey">職位</div><div class="pval">教授（2014年〜）</div></div>
       <div class="profile-item"><div class="pkey">学位</div><div class="pval">博士（政策・メディア）慶應義塾大学 2001年12月</div></div>
@@ -95,9 +309,11 @@
     </div>
   </div>
 
-  <!-- RESEARCH -->
-  <div class="section">
-    <div class="section-title">Research — 研究の核心</div>
+  <div class="section reveal">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <span class="section-title">Research — 研究の核心</span>
+    </div>
 
     <div class="card">
       <h3>🔬 NPOとコミュニティの相互作用</h3>
@@ -105,7 +321,7 @@
     </div>
 
     <div class="quote-block">
-      <div class="quote-text">「コミュニティとは、単に地理的に近接した人々の集まりではない。共通の問題意識と、それに向き合うための関係的資源（ソーシャル・キャピタル）の蓄積によって形成される。NPOはこの関係的資源の生産・流通・再配分を担う組織として機能する」</div>
+      <div class="quote-text">コミュニティとは、単に地理的に近接した人々の集まりではない。共通の問題意識と、それに向き合うための関係的資源（ソーシャル・キャピタル）の蓄積によって形成される。NPOはこの関係的資源の生産・流通・再配分を担う組織として機能する。</div>
       <div class="quote-source">── 宮垣元「コミュニティと総合政策」Keio SFC Journal 21(1): 66-90（2021）</div>
     </div>
 
@@ -115,7 +331,7 @@
     </div>
 
     <div class="quote-block">
-      <div class="quote-text">「NPOにおける関係的資源とは、金銭的資源や人的資源に還元できない、組織間・組織内の信頼・互恵性・ネットワークである。この関係的資源こそが、NPOの持続可能性と社会的インパクトの最大の決定因であることが実証的に示されている」</div>
+      <div class="quote-text">NPOにおける関係的資源とは、金銭的資源や人的資源に還元できない、組織間・組織内の信頼・互恵性・ネットワークである。この関係的資源こそが、NPOの持続可能性と社会的インパクトの最大の決定因であることが実証的に示されている。</div>
       <div class="quote-source">── 宮垣元「NPOにおける関係的資源の効果」経済社会学会年報 39号（2017）</div>
     </div>
 
@@ -125,43 +341,49 @@
     </div>
 
     <div class="quote-block">
-      <div class="quote-text">「ポスト震災期のコミュニティ研究が示したのは、NPOネットワークの密度と多様性が、コミュニティの回復力（レジリエンス）を左右するという事実である。孤立した個人ではなく、つながりの設計こそが社会問題解決の核心である」</div>
+      <div class="quote-text">ポスト震災期のコミュニティ研究が示したのは、NPOネットワークの密度と多様性が、コミュニティの回復力（レジリエンス）を左右するという事実である。孤立した個人ではなく、つながりの設計こそが社会問題解決の核心である。</div>
       <div class="quote-source">── 宮垣元「ポスト震災期コミュニティにおけるNPOネットワークの構造変動と地域間比較分析」科研費研究成果報告書（2023）</div>
     </div>
   </div>
 
-  <!-- PUBLICATIONS -->
-  <div class="section">
-    <div class="section-title">Publications — 主要著書・論文</div>
+  <div class="section reveal">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <span class="section-title">Publications — 主要著書・論文</span>
+    </div>
     <div class="book-grid">
       <div class="book-card"><div class="book-year">2016</div><h4>『コミュニティの再生——経済と社会の潜在力を活かす』</h4><p>中央経済社（共著）／ 経済・社会の二側面からコミュニティを再設計する論考</p></div>
       <div class="book-card"><div class="book-year">2010</div><h4>『社会ネットワークのリサーチ・メソッド——つながりを調査する』</h4><p>ミネルヴァ書房（共著）／ ネットワーク分析の実践ガイド</p></div>
       <div class="book-card"><div class="book-year">2009</div><h4>『コミュニティ科学——技術と社会のイノベーション』</h4><p>勁草書房（共著）／ テクノロジーとコミュニティの接点</p></div>
       <div class="book-card"><div class="book-year">2003</div><h4>『ヒューマンサービスと信頼——福祉NPOの理論と実証』</h4><p>慶應義塾大学出版会 ／ NPO論の基礎理論書</p></div>
     </div>
-    <br>
-    <div class="pub-item"><div class="pub-year">2022</div><div class="pub-content"><h4>「NPO法人における収益構造の15年間の変容」</h4><p>ノンプロフィット・レビュー</p></div></div>
-    <div class="pub-item"><div class="pub-year">2021</div><div class="pub-content"><h4>「コミュニティと総合政策」</h4><p>Keio SFC Journal 21(1): 66-90</p></div></div>
-    <div class="pub-item"><div class="pub-year">2019</div><div class="pub-content"><h4>「民間非営利組織におけるネットワーク構造と協働」</h4><p>国民経済雑誌 219(5)</p></div></div>
-    <div class="pub-item"><div class="pub-year">2017</div><div class="pub-content"><h4>「NPOにおける関係的資源の効果」</h4><p>経済社会学会年報 (39)</p></div></div>
-    <div class="pub-item"><div class="pub-year">2014</div><div class="pub-content"><h4>「地域コミュニティとNPOの相互作用」</h4><p>経済社会学会年報 (35)</p></div></div>
+    <div class="pub-list">
+      <div class="pub-item"><div class="pub-year">2022</div><div class="pub-content"><h4>「NPO法人における収益構造の15年間の変容」</h4><p>ノンプロフィット・レビュー</p></div></div>
+      <div class="pub-item"><div class="pub-year">2021</div><div class="pub-content"><h4>「コミュニティと総合政策」</h4><p>Keio SFC Journal 21(1): 66-90</p></div></div>
+      <div class="pub-item"><div class="pub-year">2019</div><div class="pub-content"><h4>「民間非営利組織におけるネットワーク構造と協働」</h4><p>国民経済雑誌 219(5)</p></div></div>
+      <div class="pub-item"><div class="pub-year">2017</div><div class="pub-content"><h4>「NPOにおける関係的資源の効果」</h4><p>経済社会学会年報 (39)</p></div></div>
+      <div class="pub-item"><div class="pub-year">2014</div><div class="pub-content"><h4>「地域コミュニティとNPOの相互作用」</h4><p>経済社会学会年報 (35)</p></div></div>
+    </div>
   </div>
 
-  <!-- SUMMARY -->
-  <div class="section">
-    <div class="section-title">Summary — 3分でわかる宮垣研究室</div>
+  <div class="section reveal">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <span class="section-title">Summary — 3分でわかる宮垣研究室</span>
+    </div>
     <div class="summary-box">
-      <h3>💡 宮垣元が問いかけていること</h3>
-      <p><strong>「社会問題を解決するのは、制度でも市場でもなく、つながりだ」</strong></p>
+      <h3>社会問題を解決するのは、<br>制度でも市場でもなく、つながりだ。</h3>
       <p>阪神・淡路大震災の後、コミュニティとNPOがどう動いたかを20年以上追い続けてきた。そこから見えてきたのは「関係的資源（ソーシャル・キャピタル）を持つ組織は生き残り、孤立した組織は消えていく」という法則。</p>
       <p>社会起業もNPOも、結局は「信頼のネットワーク」をどう設計するかの問いに行き着く。宮垣の研究室は、その設計の理論と実証を両輪で行う。</p>
       <p><strong>要するに：「コミュニティをつくる技術」を経済社会学で解明する研究。これはトモスマの設計そのもの。</strong></p>
     </div>
   </div>
 
-  <!-- GIVE & TAKE -->
-  <div class="section">
-    <div class="section-title">Give &amp; Take — 渡辺瑛太との接続</div>
+  <div class="section reveal">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <span class="section-title">Give &amp; Take — 渡辺瑛太との接続</span>
+    </div>
     <div class="give-take">
       <div class="give">
         <h3>GIVE → 渡辺が宮垣ゼミに持ち込めるもの</h3>
@@ -186,15 +408,28 @@
     </div>
   </div>
 
-  <!-- 志望理由書接続 -->
-  <div class="section">
-    <div class="section-title">AO接続 — 志望理由書での使い方</div>
+  <div class="section reveal">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <span class="section-title">AO接続 — 志望理由書での使い方</span>
+    </div>
     <div class="card">
-      <h3>✍️ 推奨フレーズ（引用を活かした接続）</h3>
-      <p style="margin-top:10px;">「宮垣元教授は『孤立した個人ではなく、つながりの設計こそが社会問題解決の核心である』と論じている。私が設立したトモスマは、外国人労働者の孤独を解消するためのコミュニティ設計を実践するNPO的組織だ。宮垣研究室でソーシャル・キャピタル理論とネットワーク分析の手法を習得し、トモスマという進行中の実験を学術的に解剖することで、孤独を生まないコミュニティ設計の普遍的モデルを構築したい。」</p>
+      <h3>✍️ 推奨フレーズ</h3>
+      <p style="margin-top:10px; font-style:italic; line-height:2;">「宮垣元教授は『孤立した個人ではなく、つながりの設計こそが社会問題解決の核心である』と論じている。私が設立したトモスマは、外国人労働者の孤独を解消するためのコミュニティ設計を実践するNPO的組織だ。宮垣研究室でソーシャル・キャピタル理論とネットワーク分析の手法を習得し、トモスマという進行中の実験を学術的に解剖することで、孤独を生まないコミュニティ設計の普遍的モデルを構築したい。」</p>
     </div>
   </div>
 
 </div>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>

@@ -4,69 +4,311 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>伴野崇生 研究ポータル | SFC AO対策</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Noto+Sans+JP:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+  :root {
+    --accent: #1a56db;
+    --accent-light: #e8f0fe;
+    --accent-mid: #93b4f8;
+    --text: #0f0f0f;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --bg: #fafafa;
+    --white: #ffffff;
+  }
+
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif; background: #f5f5f5; color: #1c1c1c; line-height: 1.7; }
 
-  .hero { background: #ffffff; border-top: 4px solid #2563eb; padding: 56px 40px 48px; border-bottom: 1px solid #e5e7eb; }
-  .hero-inner { max-width: 900px; margin: 0 auto; }
-  .label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #2563eb; margin-bottom: 12px; font-weight: 600; }
-  .hero h1 { font-size: 42px; font-weight: 700; color: #111827; margin-bottom: 6px; }
-  .hero-sub { font-size: 16px; color: #6b7280; margin-bottom: 20px; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--white);
+    padding: 80px 60px 64px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent-mid) 100%);
+  }
+  .hero::after {
+    content: '研究';
+    position: absolute;
+    right: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 160px;
+    font-weight: 700;
+    color: var(--accent-light);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(52px, 6vw, 80px);
+    font-weight: 900;
+    color: var(--text);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+  .hero-en {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--muted);
+    margin-bottom: 28px;
+  }
   .tags { display: flex; flex-wrap: wrap; gap: 8px; }
-  .tag { background: #eff6ff; border: 1px solid #bfdbfe; color: #1d4ed8; padding: 4px 12px; border-radius: 20px; font-size: 12px; }
+  .tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    background: var(--accent-light);
+    color: var(--accent);
+    padding: 5px 14px;
+    border-radius: 2px;
+    font-weight: 500;
+  }
 
-  .container { max-width: 900px; margin: 0 auto; padding: 40px; }
+  /* ── LAYOUT ── */
+  .container { max-width: 860px; margin: 0 auto; padding: 64px 60px; }
+  .section { margin-bottom: 72px; }
 
-  .section { margin-bottom: 50px; }
-  .section-title { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #2563eb; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #e5e7eb; font-weight: 700; }
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 28px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent-mid);
+  }
+  .section-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+  }
 
-  .card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 24px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
-  .card h3 { color: #1d4ed8; font-size: 15px; margin-bottom: 10px; }
-  .card p { color: #374151; font-size: 14px; }
+  /* ── CARDS ── */
+  .card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 28px 32px;
+    margin-bottom: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+  .card h3 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 12px;
+    letter-spacing: 0.02em;
+  }
+  .card p { font-size: 14px; color: #374151; line-height: 1.85; }
 
-  .quote-block { background: #f8faff; border-left: 3px solid #2563eb; padding: 20px 24px; margin: 16px 0; border-radius: 0 8px 8px 0; }
-  .quote-block .quote-text { font-size: 14px; color: #374151; line-height: 1.9; font-style: italic; margin-bottom: 10px; }
-  .quote-block .quote-source { font-size: 12px; color: #6b7280; }
+  /* ── QUOTES ── */
+  .quote-block {
+    position: relative;
+    padding: 32px 36px 32px 52px;
+    margin: 20px 0;
+    background: var(--white);
+    border-left: 3px solid var(--accent);
+  }
+  .quote-block::before {
+    content: '"';
+    font-family: 'Playfair Display', serif;
+    font-size: 80px;
+    line-height: 1;
+    color: var(--accent-light);
+    position: absolute;
+    left: 16px;
+    top: 20px;
+  }
+  .quote-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 14.5px;
+    font-style: italic;
+    color: #1f2937;
+    line-height: 1.9;
+    margin-bottom: 14px;
+  }
+  .quote-source {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.03em;
+  }
 
-  .pub-item { display: flex; gap: 16px; padding: 16px; border-bottom: 1px solid #f3f4f6; background: #ffffff; }
-  .pub-item:first-of-type { border-radius: 8px 8px 0 0; border: 1px solid #e5e7eb; border-bottom: none; }
-  .pub-item:last-of-type { border-radius: 0 0 8px 8px; border: 1px solid #e5e7eb; }
-  .pub-item + .pub-item { border: 1px solid #e5e7eb; border-top: none; }
-  .pub-year { min-width: 48px; font-size: 13px; color: #2563eb; font-weight: 700; padding-top: 2px; }
-  .pub-content h4 { font-size: 14px; color: #111827; margin-bottom: 4px; }
-  .pub-content p { font-size: 13px; color: #9ca3af; }
+  /* ── PUBLICATIONS ── */
+  .pub-list { border: 1px solid var(--border); border-radius: 4px; overflow: hidden; background: var(--white); }
+  .pub-item {
+    display: flex;
+    gap: 20px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s;
+  }
+  .pub-item:last-child { border-bottom: none; }
+  .pub-item:hover { background: var(--accent-light); }
+  .pub-year {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--accent);
+    min-width: 44px;
+    padding-top: 2px;
+  }
+  .pub-content h4 { font-size: 13.5px; font-weight: 500; color: var(--text); margin-bottom: 3px; }
+  .pub-content p { font-size: 12px; color: var(--muted); }
 
-  .give-take { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-  .give { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 20px; }
-  .take { background: #faf5ff; border: 1px solid #e9d5ff; border-radius: 8px; padding: 20px; }
-  .give h3 { color: #15803d; font-size: 12px; letter-spacing: 2px; margin-bottom: 14px; font-weight: 700; }
-  .take h3 { color: #7c3aed; font-size: 12px; letter-spacing: 2px; margin-bottom: 14px; font-weight: 700; }
+  /* ── GIVE TAKE ── */
+  .give-take { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .give {
+    background: #f0fdf4;
+    border: 1px solid #86efac;
+    border-radius: 4px;
+    padding: 24px;
+  }
+  .take {
+    background: #faf5ff;
+    border: 1px solid #d8b4fe;
+    border-radius: 4px;
+    padding: 24px;
+  }
+  .give h3, .take h3 {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+  .give h3 { color: #15803d; }
+  .take h3 { color: #7c3aed; }
   .give ul, .take ul { list-style: none; }
-  .give ul li, .take ul li { font-size: 14px; color: #374151; margin-bottom: 10px; padding-left: 18px; position: relative; }
-  .give ul li::before { content: '→'; position: absolute; left: 0; color: #16a34a; }
-  .take ul li::before { content: '←'; position: absolute; left: 0; color: #7c3aed; }
+  .give li, .take li {
+    font-size: 13px;
+    color: #374151;
+    padding-left: 18px;
+    position: relative;
+    margin-bottom: 10px;
+    line-height: 1.65;
+  }
+  .give li::before { content: '→'; position: absolute; left: 0; color: #16a34a; font-family: 'DM Mono', monospace; }
+  .take li::before { content: '←'; position: absolute; left: 0; color: #7c3aed; font-family: 'DM Mono', monospace; }
 
-  .summary-box { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 28px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
-  .summary-box h3 { color: #1d4ed8; font-size: 15px; margin-bottom: 14px; }
-  .summary-box p { font-size: 14px; color: #374151; margin-bottom: 10px; }
+  /* ── SUMMARY ── */
+  .summary-box {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 36px 40px;
+    position: relative;
+  }
+  .summary-box::before {
+    content: '💡';
+    font-size: 28px;
+    display: block;
+    margin-bottom: 16px;
+  }
+  .summary-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 16px;
+    line-height: 1.4;
+  }
+  .summary-box p { font-size: 14px; color: #374151; margin-bottom: 12px; }
 
+  /* ── PROFILE GRID ── */
   .profile-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
-  .profile-item { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px; }
-  .profile-item .pkey { font-size: 11px; color: #2563eb; letter-spacing: 1px; margin-bottom: 6px; font-weight: 600; }
-  .profile-item .pval { font-size: 14px; color: #1c1c1c; }
+  .profile-item {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 16px 20px;
+  }
+  .pkey {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+  .pval { font-size: 13px; color: var(--text); line-height: 1.6; }
 
-  .alert { background: #fffbeb; border: 1px solid #fde68a; border-radius: 8px; padding: 14px 18px; margin-bottom: 20px; }
-  .alert p { font-size: 13px; color: #92400e; }
+  /* ── ALERT ── */
+  .alert {
+    background: #fffbeb;
+    border: 1px solid #fcd34d;
+    border-radius: 4px;
+    padding: 14px 20px;
+    margin-bottom: 20px;
+    font-size: 13px;
+    color: #92400e;
+  }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 640px) {
+    .hero { padding: 60px 24px 48px; }
+    .hero::after { display: none; }
+    .container { padding: 48px 24px; }
+    .give-take { grid-template-columns: 1fr; }
+    .profile-grid { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
 
 <div class="hero">
   <div class="hero-inner">
-    <div class="label">SFC 総合政策学部 / AO研究ポータル</div>
+    <div class="hero-label">SFC 総合政策学部 &nbsp;/&nbsp; AO Research Portal</div>
     <h1>伴野 崇生</h1>
-    <div class="hero-sub">准教授（有期）/ Takao Tomono</div>
+    <div class="hero-en">Takao Tomono &nbsp;— 准教授（有期）</div>
     <div class="tags">
       <span class="tag">難民支援</span>
       <span class="tag">パターン・ランゲージ</span>
@@ -81,10 +323,12 @@
 
 <div class="container">
 
-  <!-- PROFILE -->
-  <div class="section">
-    <div class="section-title">Profile</div>
-    <div class="alert"><p>⚠️ 有期の准教授（2024年9月着任）。契約状況は出願前に公式サイトで要確認。</p></div>
+  <div class="section reveal">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <span class="section-title">Profile</span>
+    </div>
+    <div class="alert">⚠️ 有期の准教授（2024年9月着任）。契約状況は出願前に公式サイトで要確認。</div>
     <div class="profile-grid">
       <div class="profile-item"><div class="pkey">学位</div><div class="pval">博士（人間科学）立命館大学 2024年3月</div></div>
       <div class="profile-item"><div class="pkey">修士</div><div class="pval">早稲田大学 日本語教育学 2006年3月</div></div>
@@ -95,9 +339,11 @@
     </div>
   </div>
 
-  <!-- RESEARCH -->
-  <div class="section">
-    <div class="section-title">Research — 研究の核心</div>
+  <div class="section reveal">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <span class="section-title">Research — 研究の核心</span>
+    </div>
 
     <div class="card">
       <h3>🔬 科研費プロジェクト（2023〜2028）</h3>
@@ -106,7 +352,7 @@
     </div>
 
     <div class="quote-block">
-      <div class="quote-text">「難民支援の現場において、支援者は経験を積むほど深くなる一方で、その知恵が組織や次世代に伝わらないという問題がある。パターン・ランゲージは、この暗黙知を言語化し、誰もが使える形に変換するための方法論である」</div>
+      <div class="quote-text">難民支援の現場において、支援者は経験を積むほど深くなる一方で、その知恵が組織や次世代に伝わらないという問題がある。パターン・ランゲージは、この暗黙知を言語化し、誰もが使える形に変換するための方法論である。</div>
       <div class="quote-source">── 伴野崇生（科研費研究概要より）</div>
     </div>
 
@@ -121,37 +367,44 @@
     </div>
 
     <div class="quote-block">
-      <div class="quote-text">「難民日本語教育における専門家の〈わざ〉をパターン・ランゲージで記述することで、支援者の孤立を防ぎ、現場の知恵を社会の資産にすることができる。ネガティブ・ケイパビリティ（答えの出ない状況に耐え続ける力）は、難民支援者が持つべき中核的な資質であり、それ自体がパターンとして伝承されるべき価値を持つ」</div>
-      <div class="quote-source">── 伴野崇生「難民日本語教育における『ネガティブ・ケイパビリティ』の意義と課題——専門家の〈わざ〉のパターン・ランゲージによる記述」対遇コミュニケーション研究（2025）</div>
+      <div class="quote-text">難民日本語教育における専門家の〈わざ〉をパターン・ランゲージで記述することで、支援者の孤立を防ぎ、現場の知恵を社会の資産にすることができる。ネガティブ・ケイパビリティ（答えの出ない状況に耐え続ける力）は、難民支援者が持つべき中核的な資質であり、それ自体がパターンとして伝承されるべき価値を持つ。</div>
+      <div class="quote-source">── 伴野崇生「難民日本語教育における『ネガティブ・ケイパビリティ』の意義と課題」対遇コミュニケーション研究（2025）</div>
     </div>
   </div>
 
-  <!-- PUBLICATIONS -->
-  <div class="section">
-    <div class="section-title">Publications — 主要著書・論文</div>
-    <div class="pub-item"><div class="pub-year">2025</div><div class="pub-content"><h4>「難民日本語教育における『ネガティブ・ケイパビリティ』の意義と課題」</h4><p>対遇コミュニケーション研究 ／ パターン・ランゲージ×難民支援の最新論文</p></div></div>
-    <div class="pub-item"><div class="pub-year">2025</div><div class="pub-content"><h4>『現代日本語教育ハンドブック』（共編著）</h4><p>日本語教育学会監修 ／ 難民・移民支援の最新知見を収録</p></div></div>
-    <div class="pub-item"><div class="pub-year">2024</div><div class="pub-content"><h4>『文化心理学への招待』（共著）</h4><p>誠信書房 ／ Auto-TEM（複線径路等至性モデリング）による質的分析</p></div></div>
-    <div class="pub-item"><div class="pub-year">2023</div><div class="pub-content"><h4>「外国人材との協働コミュニティをつくるためのパターン・ランゲージの全体像とその作成プロセス」</h4><p>筑波大学グローバルコミュニケーション教育センター日本語教育論集 38号 ／ 黒田文彦ほかと共著</p></div></div>
-    <div class="pub-item"><div class="pub-year">2023</div><div class="pub-content"><h4>「難民支援としての日本語教育」</h4><p>小出記念日本語教育学会論文集 ／ 現場実践の理論化</p></div></div>
-    <div class="pub-item"><div class="pub-year">2023</div><div class="pub-content"><h4>「難民を対象とした日本語教育実践者の自己形成・成長過程」</h4><p>社会構想研究 ／ Auto-TEM分析による支援者の成長プロセス研究</p></div></div>
+  <div class="section reveal">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <span class="section-title">Publications — 主要著書・論文</span>
+    </div>
+    <div class="pub-list">
+      <div class="pub-item"><div class="pub-year">2025</div><div class="pub-content"><h4>「難民日本語教育における『ネガティブ・ケイパビリティ』の意義と課題」</h4><p>対遇コミュニケーション研究 ／ パターン・ランゲージ×難民支援の最新論文</p></div></div>
+      <div class="pub-item"><div class="pub-year">2025</div><div class="pub-content"><h4>『現代日本語教育ハンドブック』（共編著）</h4><p>日本語教育学会監修 ／ 難民・移民支援の最新知見を収録</p></div></div>
+      <div class="pub-item"><div class="pub-year">2024</div><div class="pub-content"><h4>『文化心理学への招待』（共著）</h4><p>誠信書房 ／ Auto-TEM（複線径路等至性モデリング）による質的分析</p></div></div>
+      <div class="pub-item"><div class="pub-year">2023</div><div class="pub-content"><h4>「外国人材との協働コミュニティをつくるためのパターン・ランゲージの全体像とその作成プロセス」</h4><p>筑波大学グローバルコミュニケーション教育センター日本語教育論集 38号</p></div></div>
+      <div class="pub-item"><div class="pub-year">2023</div><div class="pub-content"><h4>「難民支援としての日本語教育」</h4><p>小出記念日本語教育学会論文集 ／ 現場実践の理論化</p></div></div>
+      <div class="pub-item"><div class="pub-year">2023</div><div class="pub-content"><h4>「難民を対象とした日本語教育実践者の自己形成・成長過程」</h4><p>社会構想研究 ／ Auto-TEM分析による支援者の成長プロセス研究</p></div></div>
+    </div>
   </div>
 
-  <!-- SUMMARY -->
-  <div class="section">
-    <div class="section-title">Summary — 3分でわかる伴野研究室</div>
+  <div class="section reveal">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <span class="section-title">Summary — 3分でわかる伴野研究室</span>
+    </div>
     <div class="summary-box">
-      <h3>💡 伴野崇生が問いかけていること</h3>
-      <p><strong>「支援の現場には宝が眠っている。でもその宝は誰にも伝わらずに消えていく」</strong></p>
+      <h3>支援の現場には宝が眠っている。<br>でもその宝は誰にも伝わらずに消えていく。</h3>
       <p>難民を支える人々（支援者）は経験を積むほど深い知恵を持つ。しかしその知恵は「言語化されないまま」個人の中に留まり、次の支援者には伝わらない。その結果、支援者は孤立し、疲弊する。</p>
       <p>伴野は「パターン・ランゲージ」という方法で、この暗黙知を社会の資産に変えようとしている。「繰り返し有効だった支援の動き」をパターンとして言語化し、誰もが使えるツールにする。</p>
       <p><strong>要するに：孤独を生む「言葉にならない断絶」を、言語化によって解消する研究。</strong></p>
     </div>
   </div>
 
-  <!-- GIVE & TAKE -->
-  <div class="section">
-    <div class="section-title">Give &amp; Take — 渡辺瑛太との接続</div>
+  <div class="section reveal">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <span class="section-title">Give &amp; Take — 渡辺瑛太との接続</span>
+    </div>
     <div class="give-take">
       <div class="give">
         <h3>GIVE → 渡辺が伴野ゼミに持ち込めるもの</h3>
@@ -176,15 +429,28 @@
     </div>
   </div>
 
-  <!-- 志望理由書接続 -->
-  <div class="section">
-    <div class="section-title">AO接続 — 志望理由書での使い方</div>
+  <div class="section reveal">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <span class="section-title">AO接続 — 志望理由書での使い方</span>
+    </div>
     <div class="card">
-      <h3>✍️ 推奨フレーズ（引用を活かした接続）</h3>
-      <p style="margin-top:10px;">「伴野崇生准教授が開発を進める難民支援者のためのパターン・ランゲージは、現場の暗黙知を社会の資産に変えるための方法論だ。私がインタビューで積み上げた『外国人労働者の孤独構造』の一次データを、このパターン・ランゲージの方法で体系化し、次の支援者・次の企業に手渡せる知識に昇華させたい。伴野研究室は、私の現場経験を学術的な解決策に変換する場として最適だ。」</p>
+      <h3>✍️ 推奨フレーズ</h3>
+      <p style="margin-top:10px; font-style:italic; line-height:2;">「伴野崇生准教授が開発を進める難民支援者のためのパターン・ランゲージは、現場の暗黙知を社会の資産に変えるための方法論だ。私がインタビューで積み上げた『外国人労働者の孤独構造』の一次データを、このパターン・ランゲージの方法で体系化し、次の支援者・次の企業に手渡せる知識に昇華させたい。伴野研究室は、私の現場経験を学術的な解決策に変換する場として最適だ。」</p>
     </div>
   </div>
 
 </div>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
