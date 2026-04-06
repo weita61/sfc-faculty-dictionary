@@ -6,57 +6,59 @@
 <title>宮垣元 研究ポータル | SFC AO対策</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif; background: #0f0f14; color: #e8e8f0; line-height: 1.7; }
+  body { font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif; background: #f5f5f5; color: #1c1c1c; line-height: 1.7; }
 
-  .hero { background: linear-gradient(135deg, #1a1a2e 0%, #1a2e1a 50%, #2e2a0a 100%); padding: 60px 40px; border-bottom: 1px solid #3a5c2a; }
+  .hero { background: #ffffff; border-top: 4px solid #16a34a; padding: 56px 40px 48px; border-bottom: 1px solid #e5e7eb; }
   .hero-inner { max-width: 900px; margin: 0 auto; }
-  .label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #8ad86a; margin-bottom: 12px; }
-  .hero h1 { font-size: 42px; font-weight: 700; color: #fff; margin-bottom: 6px; }
-  .hero-sub { font-size: 16px; color: #b4d8a0; margin-bottom: 20px; }
+  .label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #16a34a; margin-bottom: 12px; font-weight: 600; }
+  .hero h1 { font-size: 42px; font-weight: 700; color: #111827; margin-bottom: 6px; }
+  .hero-sub { font-size: 16px; color: #6b7280; margin-bottom: 20px; }
   .tags { display: flex; flex-wrap: wrap; gap: 8px; }
-  .tag { background: rgba(138,216,106,0.12); border: 1px solid rgba(138,216,106,0.3); color: #b4d8a0; padding: 4px 12px; border-radius: 20px; font-size: 12px; }
+  .tag { background: #f0fdf4; border: 1px solid #bbf7d0; color: #15803d; padding: 4px 12px; border-radius: 20px; font-size: 12px; }
 
   .container { max-width: 900px; margin: 0 auto; padding: 40px; }
   .section { margin-bottom: 50px; }
-  .section-title { font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: #8ad86a; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #2a3c1a; }
+  .section-title { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #16a34a; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #e5e7eb; font-weight: 700; }
 
-  .card { background: #1a1a2e; border: 1px solid #2a3c1a; border-radius: 8px; padding: 24px; margin-bottom: 16px; }
-  .card h3 { color: #b4d8a0; font-size: 16px; margin-bottom: 10px; }
-  .card p { color: #b0c8a0; font-size: 14px; }
+  .card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 24px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+  .card h3 { color: #15803d; font-size: 15px; margin-bottom: 10px; }
+  .card p { color: #374151; font-size: 14px; }
 
-  .quote-block { background: linear-gradient(135deg, #1a2a1a, #1a1a2e); border-left: 3px solid #8ad86a; padding: 20px 24px; margin: 16px 0; border-radius: 0 8px 8px 0; }
-  .quote-block .quote-text { font-size: 15px; color: #d8f0d0; line-height: 1.8; font-style: italic; margin-bottom: 10px; }
-  .quote-block .quote-source { font-size: 12px; color: #8ad86a; }
+  .quote-block { background: #f0fdf4; border-left: 3px solid #16a34a; padding: 20px 24px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+  .quote-block .quote-text { font-size: 14px; color: #374151; line-height: 1.9; font-style: italic; margin-bottom: 10px; }
+  .quote-block .quote-source { font-size: 12px; color: #9ca3af; }
 
-  .pub-item { display: flex; gap: 16px; padding: 16px; border-bottom: 1px solid #1a2a1a; }
-  .pub-year { min-width: 48px; font-size: 13px; color: #8ad86a; font-weight: 700; padding-top: 2px; }
-  .pub-content h4 { font-size: 14px; color: #d0f0c0; margin-bottom: 4px; }
-  .pub-content p { font-size: 13px; color: #90b080; }
+  .pub-item { display: flex; gap: 16px; padding: 16px; background: #ffffff; border: 1px solid #e5e7eb; border-top: none; }
+  .pub-item:first-of-type { border-radius: 8px 8px 0 0; border-top: 1px solid #e5e7eb; }
+  .pub-item:last-of-type { border-radius: 0 0 8px 8px; }
+  .pub-year { min-width: 48px; font-size: 13px; color: #16a34a; font-weight: 700; padding-top: 2px; }
+  .pub-content h4 { font-size: 14px; color: #111827; margin-bottom: 4px; }
+  .pub-content p { font-size: 13px; color: #9ca3af; }
 
   .give-take { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-  .give { background: linear-gradient(135deg, #1a2e1a, #1a1a2e); border: 1px solid #2a5c2a; border-radius: 8px; padding: 20px; }
-  .take { background: linear-gradient(135deg, #2e2a1a, #1a1a2e); border: 1px solid #5c4a1a; border-radius: 8px; padding: 20px; }
-  .give h3 { color: #6ad88a; font-size: 13px; letter-spacing: 2px; margin-bottom: 14px; }
-  .take h3 { color: #d8c86a; font-size: 13px; letter-spacing: 2px; margin-bottom: 14px; }
+  .give { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 20px; }
+  .take { background: #fefce8; border: 1px solid #fef08a; border-radius: 8px; padding: 20px; }
+  .give h3 { color: #15803d; font-size: 12px; letter-spacing: 2px; margin-bottom: 14px; font-weight: 700; }
+  .take h3 { color: #a16207; font-size: 12px; letter-spacing: 2px; margin-bottom: 14px; font-weight: 700; }
   .give ul, .take ul { list-style: none; }
-  .give ul li, .take ul li { font-size: 14px; color: #b8c8a8; margin-bottom: 10px; padding-left: 16px; position: relative; }
-  .give ul li::before { content: '→'; position: absolute; left: 0; color: #6ad88a; }
-  .take ul li::before { content: '←'; position: absolute; left: 0; color: #d8c86a; }
+  .give ul li, .take ul li { font-size: 14px; color: #374151; margin-bottom: 10px; padding-left: 18px; position: relative; }
+  .give ul li::before { content: '→'; position: absolute; left: 0; color: #16a34a; }
+  .take ul li::before { content: '←'; position: absolute; left: 0; color: #ca8a04; }
 
-  .summary-box { background: linear-gradient(135deg, #1a2a1a, #161620); border: 1px solid #3a5a2a; border-radius: 12px; padding: 28px; }
-  .summary-box h3 { color: #b4d8a0; font-size: 15px; margin-bottom: 14px; }
-  .summary-box p { font-size: 14px; color: #b0c8a0; margin-bottom: 10px; }
+  .summary-box { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 28px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+  .summary-box h3 { color: #15803d; font-size: 15px; margin-bottom: 14px; }
+  .summary-box p { font-size: 14px; color: #374151; margin-bottom: 10px; }
 
-  .profile-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-  .profile-item { background: #1a1a2e; border: 1px solid #2a3c1a; border-radius: 8px; padding: 16px; }
-  .profile-item .pkey { font-size: 11px; color: #8ad86a; letter-spacing: 1px; margin-bottom: 6px; }
-  .profile-item .pval { font-size: 14px; color: #d0e8c0; }
+  .profile-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .profile-item { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px; }
+  .profile-item .pkey { font-size: 11px; color: #16a34a; letter-spacing: 1px; margin-bottom: 6px; font-weight: 600; }
+  .profile-item .pval { font-size: 14px; color: #1c1c1c; }
 
-  .book-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 10px; }
-  .book-card { background: #141e14; border: 1px solid #2a4a1a; border-radius: 8px; padding: 16px; }
-  .book-card .book-year { font-size: 11px; color: #8ad86a; margin-bottom: 6px; }
-  .book-card h4 { font-size: 14px; color: #c0e0b0; margin-bottom: 6px; line-height: 1.4; }
-  .book-card p { font-size: 12px; color: #90b080; }
+  .book-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 10px; }
+  .book-card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+  .book-card .book-year { font-size: 11px; color: #16a34a; margin-bottom: 6px; font-weight: 600; }
+  .book-card h4 { font-size: 14px; color: #111827; margin-bottom: 6px; line-height: 1.4; }
+  .book-card p { font-size: 12px; color: #9ca3af; }
 </style>
 </head>
 <body>
