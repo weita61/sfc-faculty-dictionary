@@ -1,7 +1,3 @@
 {
-  "rewrites": [
-    { "source": "/tomono", "destination": "/professor_tomono.html" },
-    { "source": "/sugihara", "destination": "/professor_sugihara.html" },
-    { "source": "/miyagaki", "destination": "/professor_miyagaki.html" }
-  ]
+  "outputDirectory": "public"
 }

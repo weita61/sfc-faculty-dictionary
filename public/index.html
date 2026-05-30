@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SFC教員辞典 — 渡辺瑛太</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: 'Hiragino Sans', 'Noto Sans JP', sans-serif; background: #f5f6fa; }
+
+  /* 一覧グリッド */
+  .card { transition: transform .15s, box-shadow .15s; cursor: pointer; }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.12); }
+
+  /* 詳細スライダー */
+  #slider-wrap { display: none; position: fixed; inset: 0; z-index: 50; background: #fff; flex-direction: column; }
+  #slider-wrap.open { display: flex; }
+
+  .slide-inner { overflow-y: auto; flex: 1; padding: 24px 20px 80px; max-width: 640px; margin: 0 auto; width: 100%; }
+
+  /* スワイプ演出 */
+  #slide-content { transition: transform .22s ease, opacity .18s ease; }
+  #slide-content.exit-left { transform: translateX(-60px); opacity: 0; }
+  #slide-content.exit-right { transform: translateX(60px); opacity: 0; }
+
+  /* ナビボタン */
+  .nav-btn { background: rgba(0,0,0,.06); border: none; width: 44px; height: 44px; border-radius: 50%; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background .15s; flex-shrink: 0; }
+  .nav-btn:hover { background: rgba(0,0,0,.13); }
+  .nav-btn:disabled { opacity: .3; cursor: default; }
+
+  .stars-filled { color: #f59e0b; }
+  .stars-empty { color: #d1d5db; }
+
+  .tag { display: inline-block; background: #e0e7ff; color: #3730a3; border-radius: 9999px; padding: 2px 10px; font-size: 12px; margin: 2px; }
+  .tag-green { background: #dcfce7; color: #166534; }
+  .tag-blue { background: #dbeafe; color: #1e40af; }
+
+  .section-label { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #9ca3af; margin-bottom: 4px; margin-top: 16px; }
+  .divider { border: none; border-top: 1px solid #f3f4f6; margin: 14px 0; }
+</style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header class="bg-white border-b border-gray-200 sticky top-0 z-30">
+  <div class="max-w-5xl mx-auto px-4 py-3 flex items-center gap-3 flex-wrap">
+    <div>
+      <h1 class="text-lg font-bold text-gray-900 leading-tight">SFC教員辞典</h1>
+      <p class="text-xs text-gray-400">128名 · 慶應義塾大学 SFC</p>
+    </div>
+    <div class="flex-1 min-w-[180px]">
+      <input id="search" type="search" placeholder="名前・専門分野で検索..."
+        class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-300">
+    </div>
+    <select id="filter" class="border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-300 bg-white">
+      <option value="all">全員</option>
+      <option value="ranked">おすすめのみ</option>
+      <option value="5">★★★★★</option>
+      <option value="4">★★★★☆以上</option>
+      <option value="3">★★★☆☆以上</option>
+    </select>
+    <span id="count-label" class="text-sm text-gray-400 whitespace-nowrap"></span>
+  </div>
+</header>
+
+<!-- 一覧グリッド -->
+<main class="max-w-5xl mx-auto px-4 py-5">
+  <div id="grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3"></div>
+  <p id="empty" class="hidden text-center text-gray-400 py-16 text-sm">該当する教員が見つかりません</p>
+</main>
+
+<!-- 詳細スライダー -->
+<div id="slider-wrap">
+  <!-- トップバー -->
+  <div class="bg-white border-b border-gray-100 px-4 py-3 flex items-center gap-2 flex-shrink-0">
+    <button onclick="closeSlider()" class="text-sm text-indigo-600 font-medium flex items-center gap-1 mr-auto">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+      一覧へ戻る
+    </button>
+    <button id="btn-prev" class="nav-btn" onclick="navigate(-1)">&#8592;</button>
+    <span id="nav-counter" class="text-xs text-gray-400 w-14 text-center"></span>
+    <button id="btn-next" class="nav-btn" onclick="navigate(1)">&#8594;</button>
+  </div>
+
+  <!-- スライドコンテンツ -->
+  <div class="slide-inner">
+    <div id="slide-content"></div>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script>
+// --- State ---
+let visibleList = [];   // 現在表示している教員リスト（絞り込み済み）
+let currentIndex = 0;   // スライダーの現在位置（visibleList内のインデックス）
+let touchStartX = 0;
+
+// --- 起動 ---
+window.addEventListener("DOMContentLoaded", () => {
+  renderGrid(FACULTY_DATA);
+  document.getElementById("search").addEventListener("input", applyFilter);
+  document.getElementById("filter").addEventListener("change", applyFilter);
+});
+
+// --- フィルタ ---
+function applyFilter() {
+  const q = document.getElementById("search").value.trim().toLowerCase();
+  const mode = document.getElementById("filter").value;
+
+  let data = FACULTY_DATA;
+
+  if (mode === "ranked") data = data.filter(p => p.rank !== null);
+  else if (mode === "5") data = data.filter(p => p.stars.startsWith("★★★★★"));
+  else if (mode === "4") data = data.filter(p => p.stars && starCount(p.stars) >= 4);
+  else if (mode === "3") data = data.filter(p => p.stars && starCount(p.stars) >= 3);
+
+  if (q) {
+    data = data.filter(p =>
+      p.name.toLowerCase().includes(q) ||
+      p.expertise.toLowerCase().includes(q) ||
+      (p.themeConnection && p.themeConnection.toLowerCase().includes(q))
+    );
+  }
+
+  // おすすめ順 → 名前順
+  data = [...data].sort((a, b) => {
+    if (a.rank && b.rank) return a.rank - b.rank;
+    if (a.rank) return -1;
+    if (b.rank) return 1;
+    return a.name.localeCompare(b.name, "ja");
+  });
+
+  renderGrid(data);
+}
+
+function starCount(s) {
+  return (s.match(/★/g) || []).length;
+}
+
+// --- 一覧レンダリング ---
+function renderGrid(data) {
+  visibleList = data;
+  const grid = document.getElementById("grid");
+  const empty = document.getElementById("empty");
+  document.getElementById("count-label").textContent = `${data.length}名`;
+
+  if (data.length === 0) {
+    grid.innerHTML = "";
+    empty.classList.remove("hidden");
+    return;
+  }
+  empty.classList.add("hidden");
+
+  grid.innerHTML = data.map((p, i) => `
+    <div class="card bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100" onclick="openSlider(${i})">
+      <div class="relative">
+        <img src="${p.img || 'https://www.keio.ac.jp/researcher-image/researchers/noimage.jpg'}"
+          onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(p.name)}&background=e0e7ff&color=3730a3&size=160'"
+          alt="${p.name}" class="w-full aspect-square object-cover object-top bg-gray-100">
+        ${p.rank ? `<span class="absolute top-1.5 left-1.5 bg-indigo-600 text-white text-xs font-bold px-1.5 py-0.5 rounded-md">#${p.rank}</span>` : ""}
+      </div>
+      <div class="p-2">
+        <p class="font-bold text-gray-900 text-xs leading-tight mb-0.5">${p.name}</p>
+        ${p.stars ? `<p class="text-xs">${renderStars(p.stars)}</p>` : ""}
+        <p class="text-xs text-gray-400 leading-tight mt-1 line-clamp-2">${p.expertise.split(" / ")[0]}</p>
+      </div>
+    </div>
+  `).join("");
+}
+
+function renderStars(stars) {
+  return stars.replace(/★/g, '<span class="stars-filled">★</span>').replace(/☆/g, '<span class="stars-empty">★</span>');
+}
+
+// --- スライダー ---
+function openSlider(idx) {
+  currentIndex = idx;
+  renderSlide(currentIndex, null);
+  document.getElementById("slider-wrap").classList.add("open");
+  document.body.style.overflow = "hidden";
+  updateNavButtons();
+}
+
+function closeSlider() {
+  document.getElementById("slider-wrap").classList.remove("open");
+  document.body.style.overflow = "";
+}
+
+function navigate(dir) {
+  const next = currentIndex + dir;
+  if (next < 0 || next >= visibleList.length) return;
+
+  const exitClass = dir === 1 ? "exit-left" : "exit-right";
+  const content = document.getElementById("slide-content");
+  content.classList.add(exitClass);
+
+  setTimeout(() => {
+    currentIndex = next;
+    renderSlide(currentIndex, exitClass === "exit-left" ? "enter-right" : "enter-left");
+    content.classList.remove(exitClass);
+    updateNavButtons();
+    document.querySelector(".slide-inner").scrollTop = 0;
+  }, 180);
+}
+
+function updateNavButtons() {
+  document.getElementById("btn-prev").disabled = currentIndex <= 0;
+  document.getElementById("btn-next").disabled = currentIndex >= visibleList.length - 1;
+  document.getElementById("nav-counter").textContent = `${currentIndex + 1} / ${visibleList.length}`;
+}
+
+function renderSlide(idx) {
+  const p = visibleList[idx];
+  const content = document.getElementById("slide-content");
+
+  const section = (label, body) => body ? `<p class="section-label">${label}</p><div class="text-sm text-gray-700 leading-relaxed">${body}</div>` : "";
+  const list = (label, items) => items && items.length ? `<p class="section-label">${label}</p><ul class="text-sm text-gray-700 space-y-1">${items.map(i => `<li class="flex gap-1.5"><span class="text-gray-300 mt-0.5">•</span><span>${i}</span></li>`).join("")}</ul>` : "";
+
+  const tags = p.themeConnection ? p.themeConnection.split(" / ").map(t => `<span class="tag tag-green">${t.trim()}</span>`).join("") : "";
+  const expertiseTags = p.expertise.split(" / ").map(t => `<span class="tag">${t.trim()}</span>`).join("");
+
+  content.innerHTML = `
+    <div class="flex gap-4 items-start mb-4">
+      <img src="${p.img || ''}"
+        onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(p.name)}&background=e0e7ff&color=3730a3&size=160'"
+        alt="${p.name}" class="w-20 h-20 rounded-xl object-cover object-top flex-shrink-0 bg-gray-100 border border-gray-100">
+      <div class="flex-1 min-w-0">
+        <div class="flex items-start gap-2 flex-wrap">
+          ${p.rank ? `<span class="bg-indigo-600 text-white text-xs font-bold px-2 py-0.5 rounded-md">#${p.rank} おすすめ</span>` : ""}
+          ${p.stars ? `<span class="text-sm">${renderStars(p.stars)}</span>` : ""}
+        </div>
+        <h2 class="text-xl font-bold text-gray-900 mt-1">${p.name}</h2>
+        <p class="text-xs text-gray-500 mt-0.5 leading-snug">${p.position}</p>
+      </div>
+    </div>
+
+    ${p.themeConnection ? `
+      <div class="bg-indigo-50 rounded-lg p-3 mb-4">
+        <p class="text-xs font-bold text-indigo-700 mb-1">瑛太のテーマとの接点</p>
+        <div class="flex flex-wrap">${tags}</div>
+        ${p.analysis ? `<p class="text-sm text-indigo-800 mt-2">${p.analysis}</p>` : ""}
+      </div>
+    ` : ""}
+
+    <div class="flex flex-wrap mb-3">${expertiseTags}</div>
+    <hr class="divider">
+
+    ${section("研究紹介", p.research)}
+    ${p.research ? '<hr class="divider">' : ""}
+
+    ${list("著書", p.books)}
+    ${p.books && p.books.length ? '<hr class="divider">' : ""}
+
+    ${list("主要論文", p.papers)}
+    ${p.papers && p.papers.length ? '<hr class="divider">' : ""}
+
+    ${list("受賞", p.awards)}
+    ${list("科研費・研究プロジェクト", p.grants)}
+
+    <hr class="divider">
+    <div class="flex gap-3 mt-2">
+      ${p.profileUrl ? `<a href="${p.profileUrl}" target="_blank" rel="noopener" class="text-xs text-indigo-600 underline">慶應プロフィール</a>` : ""}
+      ${p.krisUrl ? `<a href="${p.krisUrl}" target="_blank" rel="noopener" class="text-xs text-indigo-600 underline">研究者DB</a>` : ""}
+    </div>
+  `;
+}
+
+// キーボード操作
+window.addEventListener("keydown", e => {
+  if (!document.getElementById("slider-wrap").classList.contains("open")) return;
+  if (e.key === "ArrowLeft") navigate(-1);
+  if (e.key === "ArrowRight") navigate(1);
+  if (e.key === "Escape") closeSlider();
+});
+
+// タッチスワイプ
+const sliderWrap = document.getElementById("slider-wrap");
+sliderWrap.addEventListener("touchstart", e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+sliderWrap.addEventListener("touchend", e => {
+  const diff = e.changedTouches[0].clientX - touchStartX;
+  if (Math.abs(diff) > 50) navigate(diff < 0 ? 1 : -1);
+}, { passive: true });
+</script>
+</body>
+</html>
