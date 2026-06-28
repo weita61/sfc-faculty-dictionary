@@ -1,6 +1,7 @@
 const FACULTY_DATA = [
   {
     "name": "青山 敦",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012547.jpg",
@@ -28,7 +29,8 @@ const FACULTY_DATA = [
   },
   {
     "name": "秋山 美紀",
-    "rank": 17,
+    "category": "Wellbeing",
+    "rank": 19,
     "stars": "★★★☆☆",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012548.jpg",
     "position": "環境情報学部 教授/政策・メディア研究科 PS 研究科委員/健康マネジメント研究科 研究科委員",
@@ -67,14 +69,15 @@ const FACULTY_DATA = [
   },
   {
     "name": "安宅 和人",
-    "rank": 11,
-    "stars": "★★★★☆",
+    "category": "副次①研究旅程: AI時代の付加価値設計",
+    "rank": 5,
+    "stars": "★★★★★",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012549.jpg",
     "position": "環境情報学部 教授/政策・メディア研究科 EG 研究科委員",
     "expertise": "データ×AI時代の基礎教養 / 技術・デザインを包括した戦略立案 / 新商品開発",
     "research": "",
-    "themeConnection": "AI・データ活用 / 戦略立案 / テクノロジーデザイン",
-    "analysis": "「シン・ニホン」著者。AI時代の社会デザイン論を展開。AI×社会課題解決の思想的バックグラウンドに",
+    "themeConnection": "AI時代の付加価値設計 / データ活用 / 戦略立案 / 新商品開発",
+    "analysis": "第2層（AI時代の付加価値設計プロデューサー）の戦略的土台。「AIがコモディティ化する時代に価値を持つのは何か」という大問いに、データと戦略の観点から答える力を学ぶ。「シン・ニホン」著者。",
     "books": [],
     "papers": [],
     "awards": [],
@@ -84,6 +87,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "荒川 和晴",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012551.jpg",
@@ -120,6 +124,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "アルマンスール， アフマド",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012424.jpg",
@@ -137,14 +142,15 @@ const FACULTY_DATA = [
   },
   {
     "name": "飯盛 義徳",
-    "rank": 5,
+    "category": "主軸④研究旅程: プラットフォームデザイン・市民協働",
+    "rank": 4,
     "stars": "★★★★★",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012429.jpg",
     "position": "総合政策学部 教授/政策・メディア研究科 PS 研究科委員",
     "expertise": "プラットフォームデザイン / 地域づくり / ファミリービジネスマネジメント",
     "research": "地域にふさわしいアントルプレナー育成モデルを探求するアクションリサーチ",
-    "themeConnection": "地域づくり / プラットフォームデザイン / コミュニティ",
-    "analysis": "地域づくり×プラットフォーム設計の専門家。「外国人を地域に統合する仕組み作り」の研究ベースに最適",
+    "themeConnection": "プラットフォームデザイン / 地域づくり / 市民協働 / コミュニティ・プラットフォーム",
+    "analysis": "研究旅程の到達点。単発の交流イベントから、持続的な信頼関係構築の仕組みへと昇華させる設計力を学ぶ。「技能実習生が地域住民の一員として溶け込む持続的モデル」の構築に直結。",
     "books": [
       "場づくりから始める地域づくり（飯盛義徳、西村浩、坂倉杏介、伴英美子、上田洋平, 学芸出版社, 2021年07月, ページ数： 214）",
       "日本のファミリービジネス（飯盛 義徳 、奥村昭博、階戸照雄、西川盛朗、長谷川博和、山田幸三、秋澤光、加藤孝治、曽根秀一、小林二三夫、加護野忠男, 中央経済社, 2016年08月, ページ数： 191）",
@@ -166,6 +172,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "石川 初",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100011862.jpg",
@@ -201,6 +208,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "石川 光泰",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100016962.jpg",
@@ -218,6 +226,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "石渕 理恵子",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100016967.jpg",
@@ -235,6 +244,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "一ノ瀬 友博",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012556.jpg",
@@ -272,7 +282,8 @@ const FACULTY_DATA = [
   },
   {
     "name": "井庭 崇",
-    "rank": 6,
+    "category": "コミュニティデザイン",
+    "rank": 11,
     "stars": "★★★★★",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012435.jpg",
     "position": "総合政策学部 教授/政策・メディア研究科 CB 研究科委員",
@@ -301,6 +312,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "岩田 高志",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100017830.jpg",
@@ -324,6 +336,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "植原 啓介",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012561.jpg",
@@ -353,6 +366,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "牛山 潤一",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012562.jpg",
@@ -382,7 +396,8 @@ const FACULTY_DATA = [
   },
   {
     "name": "内山 映子",
-    "rank": 20,
+    "category": "地域福祉",
+    "rank": 22,
     "stars": "★★★☆☆",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100011909.jpg",
     "position": "環境情報学部 教授（有期）/政策・メディア研究科 PS 研究科委員",
@@ -411,6 +426,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "海野 敦史",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100017433.jpg",
@@ -428,6 +444,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "大木 聖子",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012564.jpg",
@@ -449,6 +466,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "仰木 裕嗣",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100011926.jpg",
@@ -488,7 +506,8 @@ const FACULTY_DATA = [
   },
   {
     "name": "大越 匡",
-    "rank": 9,
+    "category": "Wellbeing・テクノロジー",
+    "rank": 14,
     "stars": "★★★★☆",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100011927.jpg",
     "position": "環境情報学部 准教授/政策・メディア研究科 CI 研究科委員",
@@ -515,6 +534,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "大前 学",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100011939.jpg",
@@ -540,6 +560,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "小熊 英二",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012450.jpg",
@@ -575,6 +596,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "加藤 貴昭",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012574.jpg",
@@ -612,14 +634,15 @@ const FACULTY_DATA = [
   },
   {
     "name": "加藤 文俊",
-    "rank": null,
-    "stars": "",
+    "category": "主軸①研究旅程: フィールドワーク方法論",
+    "rank": 1,
+    "stars": "★★★★★",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012575.jpg",
     "position": "環境情報学部 教授/政策・メディア研究科 XD 研究科委員",
     "expertise": "コミュニケーション論 / メディア論 / 定性的調査法",
     "research": "Tekina () is a Japanese concept which refers metaphorical expressions. &#39;Teki&#39; functions as a metaphor when an individual desires to express a feeling or explain but is unable to find exact words to portray their point. Furthermore, we can use tekina to refer to an individual&#39;s way of thought and worldview. In this paper, we explore the potential of contents in which tekina is embedded …",
-    "themeConnection": "コミュニケーション論 / メディア論 / 定性的調査法",
-    "analysis": "コミュニケーション×フィールドワーク。地域×外国人の対話設計研究に",
+    "themeConnection": "フィールドワーク方法論 / コミュニケーション論 / 定性的調査法 / 場づくり研究",
+    "analysis": "v2研究旅程の出発点。技能実習生との直感的な活動を「記述可能な研究」として再構成する方法論を学ぶ。カレー・草刈りなどの共同作業型接触の研究蓄積（著書『つながるカレー』等）がそのまま研究問いに接続する。",
     "books": [
       "Digital Media Practices in Households: Kinship through Data（Larissa Hjorth, Kana Ohashi, Jolynna Sinanan, Heather Horst, Sarah Pink, Fumitoshi Kato, Baohua Zhou, Amsterdam University Press, 2020年08月）",
       "ワークショップをとらえなおす（加藤文俊, ひつじ書房, 2018年06月）",
@@ -641,6 +664,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "蟹江 憲史",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100011970.jpg",
@@ -677,7 +701,8 @@ const FACULTY_DATA = [
   },
   {
     "name": "鎌田 華乃子",
-    "rank": 8,
+    "category": "NPO・社会起業",
+    "rank": 13,
     "stars": "★★★★☆",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100014002.jpg",
     "position": "総合政策学部 専任講師/政策・メディア研究科 PS 研究科委員",
@@ -694,6 +719,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "加茂 具樹",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012457.jpg",
@@ -727,6 +753,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "川口 航史",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100017421.jpg",
@@ -756,6 +783,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "川島 英之",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012579.jpg",
@@ -782,6 +810,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "川瀬 健太",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100017866.jpg",
@@ -802,6 +831,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "北川 敬三",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100017360.jpg",
@@ -831,7 +861,8 @@ const FACULTY_DATA = [
   },
   {
     "name": "木原 盾",
-    "rank": 4,
+    "category": "多文化共生",
+    "rank": 10,
     "stars": "★★★★★",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100016784.jpg",
     "position": "政策・メディア研究科 専任講師/総合政策学部 専任講師/政策・メディア研究科 PS 研究科委員",
@@ -868,6 +899,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "國枝 孝弘",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012463.jpg",
@@ -894,6 +926,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "黒田 裕樹",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012584.jpg",
@@ -915,6 +948,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "河野 暢明",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012020.jpg",
@@ -935,7 +969,8 @@ const FACULTY_DATA = [
   },
   {
     "name": "琴坂 将広",
-    "rank": 18,
+    "category": "社会起業・国際",
+    "rank": 20,
     "stars": "★★★★☆",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012469.jpg",
     "position": "総合政策学部 教授/政策・メディア研究科 PS 研究科委員",
@@ -971,7 +1006,8 @@ const FACULTY_DATA = [
   },
   {
     "name": "小林 博人",
-    "rank": 19,
+    "category": "まちづくり",
+    "rank": 21,
     "stars": "★★★☆☆",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012030.jpg",
     "position": "政策・メディア研究科 教授/環境情報学部 教授/政策・メディア研究科 EG 研究科委員",
@@ -988,6 +1024,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "齊藤 邦史",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012475.jpg",
@@ -1017,6 +1054,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "堺 正太朗",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100017430.jpg",
@@ -1044,6 +1082,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "佐藤 豪竜",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100015763.jpg",
@@ -1069,6 +1108,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "サベジ， パトリック",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012662.jpg",
@@ -1101,6 +1141,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "サントーソ， ペトルス アリ",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012477.jpg",
@@ -1123,6 +1164,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "シェッダーディ， アキル",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100016543.jpg",
@@ -1148,6 +1190,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "篠原 舟吾",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100015641.jpg",
@@ -1181,6 +1224,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "島津 明人",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100014922.jpg",
@@ -1213,7 +1257,28 @@ const FACULTY_DATA = [
     "krisUrl": "https://www.k-ris.keio.ac.jp/html/100014922_ja.html"
   },
   {
+    "name": "桑原 武夫",
+    "category": "副次②研究旅程: 地域ブランディング・マーケティング",
+    "rank": 6,
+    "stars": "★★★★☆",
+    "img": "https://www.keio.ac.jp/researcher-image/researchers/100012494.jpg",
+    "position": "総合政策学部 教授/政策・メディア研究科 PS 研究科委員",
+    "expertise": "地域政策 / マーケティング / 総合政策学の方法論",
+    "research": "",
+    "themeConnection": "マーケティング / 地域ブランディング / 政策デザイン / 地場産業×地域",
+    "analysis": "副次②研究会の核。「地場産業×信頼×ブランド」の接続を学術的に理論化するための研究会。第2層（AI時代に地場産業の信頼とストーリーを付加価値に変えるプロデュース業）への直接の橋渡し。",
+    "books": [
+      "総合政策学の方法論的展開（桑原武夫、清水唯一朗編著, 慶應義塾大学出版会, 2023年02月）"
+    ],
+    "papers": [],
+    "awards": [],
+    "grants": [],
+    "profileUrl": "https://www.keio.ac.jp/ja/faculty/k_100012494/",
+    "krisUrl": ""
+  },
+  {
     "name": "清水 たくみ",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012094.jpg",
@@ -1250,6 +1315,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "清水 達郎",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100017428.jpg",
@@ -1275,6 +1341,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "清水 唯一朗",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012480.jpg",
@@ -1313,6 +1380,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "清水 亮",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100016959.jpg",
@@ -1330,6 +1398,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "ショウ ラジブ",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012099.jpg",
@@ -1361,6 +1430,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "白井 さゆり",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012482.jpg",
@@ -1390,6 +1460,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "白井 裕子",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012101.jpg",
@@ -1407,6 +1478,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "神成 淳司",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012599.jpg",
@@ -1440,6 +1512,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "新谷 ロクサナ",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100015320.jpg",
@@ -1459,6 +1532,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "新保 史生",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012484.jpg",
@@ -1498,6 +1572,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "神保 謙",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012486.jpg",
@@ -1530,7 +1605,8 @@ const FACULTY_DATA = [
   },
   {
     "name": "杉原 由美",
-    "rank": 3,
+    "category": "多文化共生",
+    "rank": 9,
     "stars": "★★★★★",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012487.jpg",
     "position": "総合政策学部 准教授/政策・メディア研究科 HC 研究科委員",
@@ -1560,6 +1636,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "杉本 昌弘",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012108.jpg",
@@ -1590,6 +1667,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "鈴木 治夫",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012600.jpg",
@@ -1616,7 +1694,8 @@ const FACULTY_DATA = [
   },
   {
     "name": "諏訪 正樹",
-    "rank": 13,
+    "category": "AI・認知",
+    "rank": 16,
     "stars": "★★★★☆",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012602.jpg",
     "position": "環境情報学部 教授/政策・メディア研究科 CB 研究科委員",
@@ -1655,6 +1734,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "徐 旻廷",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100016898.jpg",
@@ -1672,6 +1752,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "タ， デゥック トゥン",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100017857.jpg",
@@ -1689,6 +1770,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "髙木 丈也",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012489.jpg",
@@ -1722,7 +1804,8 @@ const FACULTY_DATA = [
   },
   {
     "name": "高汐 一紀",
-    "rank": 16,
+    "category": "テクノロジー",
+    "rank": 18,
     "stars": "★★★★☆",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012605.jpg",
     "position": "環境情報学部 教授/政策・メディア研究科 CI 研究科委員/政策・メディア研究科 研究科委員長",
@@ -1758,6 +1841,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "武田 圭史",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012607.jpg",
@@ -1786,6 +1870,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "田島 英一",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012491.jpg",
@@ -1807,6 +1892,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "田中 浩一郎",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012144.jpg",
@@ -1824,6 +1910,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "田中 浩也",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012610.jpg",
@@ -1852,14 +1939,15 @@ const FACULTY_DATA = [
   },
   {
     "name": "玉村 雅敏",
-    "rank": null,
-    "stars": "",
+    "category": "主軸③研究旅程: 社会的インパクト評価",
+    "rank": 3,
+    "stars": "★★★★★",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012493.jpg",
     "position": "総合政策学部 教授/政策・メディア研究科 PS 研究科委員",
     "expertise": "公共経営 / ソーシャルマーケティング / 評価システム設計",
     "research": "Against a backdrop of international public policies on sustainability such as SDGs, sustainable investment assets in the world stood at $30.7 trillion in 2018. In conjunction with the developing market of sustainable investment, academic research has proved that ESG performances positively affect financial performances in many cases. However, most of the previous studies have not analysed linkages…",
-    "themeConnection": "公共経営 / ソーシャルマーケティング / 評価システム",
-    "analysis": "公共経営×社会起業の評価設計が専門。NPO・社会事業の効果測定や経営戦略に直結",
+    "themeConnection": "社会的インパクト評価（SROI） / ソーシャルマーケティング / 公共経営 / 評価システム設計",
+    "analysis": "地域での交流イベントが孤立感の解消にどう寄与するかを数値・指標で可視化する手法を学ぶ。100人超の交流活動を「研究」として記述するために不可欠な評価フレームを持つ。",
     "books": [
       "ソーシャルパワーの時代 : 「つながりのチカラ」が革新する企業と地域の価値共創 (CSV) 戦略（玉村 雅敏 編著, 東京 : 産学社, 2016年07月）",
       "東川スタイル : 人口8000人のまちが共創する未来の価値基準（玉村 雅敏 小島敏明編著 ; 吉田真緒, 東京 : 産学社,, 2016年03月）",
@@ -1883,6 +1971,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "千田 健太",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100016964.jpg",
@@ -1908,6 +1997,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "土屋 大洋",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012165.jpg",
@@ -1941,6 +2031,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "鶴岡 路人",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012496.jpg",
@@ -1958,6 +2049,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "鄭 浩瀾",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012497.jpg",
@@ -1993,6 +2085,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "東海林 祐子",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012176.jpg",
@@ -2031,6 +2124,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "冨樫 あゆみ",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100017861.jpg",
@@ -2048,7 +2142,8 @@ const FACULTY_DATA = [
   },
   {
     "name": "伴野 崇生",
-    "rank": 2,
+    "category": "多文化共生",
+    "rank": 8,
     "stars": "★★★★★",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012182.jpg",
     "position": "総合政策学部 准教授（有期）",
@@ -2067,6 +2162,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "トレース， ジョナサン",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012616.jpg",
@@ -2084,6 +2180,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "内藤 泰宏",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012617.jpg",
@@ -2114,6 +2211,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "中川 エリカ",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100016569.jpg",
@@ -2131,6 +2229,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "中澤 仁",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012618.jpg",
@@ -2158,7 +2257,8 @@ const FACULTY_DATA = [
   },
   {
     "name": "仲谷 正史",
-    "rank": 10,
+    "category": "Wellbeing・テクノロジー",
+    "rank": 15,
     "stars": "★★★★☆",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012619.jpg",
     "position": "環境情報学部 准教授/政策・メディア研究科 CB 研究科委員",
@@ -2197,14 +2297,15 @@ const FACULTY_DATA = [
   },
   {
     "name": "中西 泰人",
-    "rank": 12,
+    "category": "副次③研究旅程: 体験設計・HCI",
+    "rank": 7,
     "stars": "★★★★☆",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012620.jpg",
     "position": "環境情報学部 教授/政策・メディア研究科 XD 研究科委員",
     "expertise": "UI/UX / HCI / HRI / 設計支援 / 創造活動支援",
     "research": "Shadowing is a language-learning method whereby a learner attempts to repeat, i.e., shadow, what he/she hears immediately. We propose displaying a computer-generated intermediate face between a learner and a teacher as an appropriate intermediate scaffold for shadowing. The intermediate face allows the learner to follow a teacher&#39;s face and mouth movements more effectively. We describe a proto…",
-    "themeConnection": "UI/UX / HCI / HRI",
-    "analysis": "UI/UX・HCI専門家。ソラカキ等のアプリ開発・デバイスUI設計に直接活用できる",
+    "themeConnection": "エクスペリエンスデザイン / HCI / UI/UX / 人を喜ばせる場の設計",
+    "analysis": "「人が何にワクワクするかを見抜き形にする」という第1層能力の学術的裏付け。信頼が生まれる場の体験設計を理論化し、将来の商品・体験設計に応用する。",
     "books": [
       "Processing:ビジュアルデザイナーとアーティストのためのプログラミング入門（ベン・フライ, ケイシー・リース, 中西 泰人 , 安藤幸央 , 澤村正樹, 杉本達應, ビー・エヌ・エヌ新社, 2015年09月）",
       "パターン・ランゲージ: 創造的な未来をつくるための言語（中西 泰人 , 慶應義塾大学出版会, 2013年10月）",
@@ -2228,6 +2329,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "中浜 優子",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012621.jpg",
@@ -2261,6 +2363,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "中室 牧子",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012501.jpg",
@@ -2282,6 +2385,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "鳴川 肇",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012208.jpg",
@@ -2299,6 +2403,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "西川 葉澄",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012503.jpg",
@@ -2333,6 +2438,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "野中 葉",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012506.jpg",
@@ -2366,6 +2472,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "ハイ， キャメロン",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100015338.jpg",
@@ -2383,6 +2490,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "長谷川 福造",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100015610.jpg",
@@ -2408,6 +2516,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "服部 隆志",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012628.jpg",
@@ -2441,6 +2550,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "林 公輔",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100006326.jpg",
@@ -2458,6 +2568,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "巴山 竜来",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100016911.jpg",
@@ -2490,6 +2601,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "馬場 わかな",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012509.jpg",
@@ -2525,6 +2637,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "バンミーター， ロドニー",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012632.jpg",
@@ -2550,6 +2663,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "平山 明由",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012251.jpg",
@@ -2571,6 +2685,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "廣瀬 陽子",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012513.jpg",
@@ -2607,6 +2722,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "福島 康仁",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100017479.jpg",
@@ -2640,6 +2756,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "藤井 進也",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012635.jpg",
@@ -2679,6 +2796,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "藤田 護",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012637.jpg",
@@ -2712,6 +2830,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "藤田 元信",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100016920.jpg",
@@ -2729,6 +2848,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "古谷 知之",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012518.jpg",
@@ -2766,6 +2886,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "Hoenigman, David",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100015342.jpg",
@@ -2792,7 +2913,8 @@ const FACULTY_DATA = [
   },
   {
     "name": "保田 隆明",
-    "rank": 15,
+    "category": "社会起業",
+    "rank": 17,
     "stars": "★★★★☆",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100016141.jpg",
     "position": "総合政策学部 教授/政策・メディア研究科 研究科委員",
@@ -2829,6 +2951,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "細谷 浩美",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100016802.jpg",
@@ -2846,6 +2969,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "マイヤー， アンドレアス",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012520.jpg",
@@ -2863,6 +2987,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "松川 昌平",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012644.jpg",
@@ -2887,6 +3012,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "水鳥 寿思",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012525.jpg",
@@ -2904,6 +3030,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "三次 仁",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012647.jpg",
@@ -2937,14 +3064,15 @@ const FACULTY_DATA = [
   },
   {
     "name": "宮垣 元",
-    "rank": 1,
+    "category": "主軸②研究旅程: コミュニティ論・社会学",
+    "rank": 2,
     "stars": "★★★★★",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012526.jpg",
     "position": "総合政策学部 教授/政策・メディア研究科 PS 研究科委員",
     "expertise": "社会学 / 経済社会学 / 非営利組織論 / コミュニティ論 / 社会ネットワーク論",
     "research": "",
-    "themeConnection": "NPO・非営利組織論 / 社会イノベーション / コミュニティ形成",
-    "analysis": "SFC AO志望理由書でも第3ゼミに指名済み。NPO論・社会起業の第一人者。技能実習生支援の学術的バックグラウンドに最適",
+    "themeConnection": "コミュニティ論 / NPO・非営利組織論 / 社会イノベーション / つながりの研究",
+    "analysis": "「つながりの不在」という概念を学術的言語で分析できる言葉に翻訳するための研究会。技能実習生の孤立問題をコミュニティ論の観点から構造化する。秋山美紀との共著『ヒューマンサービスとコミュニティ』も直接接続。",
     "books": [
       "「社会運動って特別なもの？：NPO/NGO、ネットワーク、新しい社会運動」工藤保則・大山小夜・笠井賢紀編『基礎ゼミ社会学』（宮垣 元 , 世界思想社, 2017年02月）",
       "『質的調査の方法：都市・文化・メディアの感じ方［第2版］』（宮垣 元 , 法律文化社, 2016年12月）",
@@ -2970,6 +3098,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "宮坂 隆文",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012329.jpg",
@@ -2987,6 +3116,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "宮代 康丈",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012527.jpg",
@@ -3013,6 +3143,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "宮本 大輔",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100016181.jpg",
@@ -3045,6 +3176,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "宮本 佳明",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012648.jpg",
@@ -3070,6 +3202,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "森 さち子",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012528.jpg",
@@ -3091,6 +3224,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "森山 光一",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100017858.jpg",
@@ -3117,6 +3251,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "矢作 尚久",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012353.jpg",
@@ -3153,6 +3288,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "山田 彬尭",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100017419.jpg",
@@ -3178,7 +3314,8 @@ const FACULTY_DATA = [
   },
   {
     "name": "山田 貴子",
-    "rank": 7,
+    "category": "コミュニティデザイン",
+    "rank": 12,
     "stars": "★★★★☆",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012361.jpg",
     "position": "環境情報学部 専任講師（有期）",
@@ -3195,6 +3332,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "山本 薫",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100014901.jpg",
@@ -3228,6 +3366,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "横山 大輔",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100017222.jpg",
@@ -3255,6 +3394,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "ワイマン， ウォルター",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012656.jpg",
@@ -3272,6 +3412,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "脇田 玲",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012657.jpg",
@@ -3311,6 +3452,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "渡辺 将人",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100016785.jpg",
@@ -3331,6 +3473,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "渡辺 光博",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012408.jpg",
@@ -3364,6 +3507,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "渡辺 靖",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012661.jpg",
@@ -3393,6 +3537,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "和田 龍磨",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012542.jpg",
@@ -3420,6 +3565,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "和田 直樹",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100016960.jpg",
@@ -3437,6 +3583,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "藁谷 郁美",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012543.jpg",
@@ -3472,6 +3619,7 @@ const FACULTY_DATA = [
   },
   {
     "name": "ヴ レ タオ チ",
+    "category": "",
     "rank": null,
     "stars": "",
     "img": "https://www.keio.ac.jp/researcher-image/researchers/100012544.jpg",

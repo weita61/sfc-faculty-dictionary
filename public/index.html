@@ -36,6 +36,15 @@
   .tag-green { background: #dcfce7; color: #166534; }
   .tag-blue { background: #dbeafe; color: #1e40af; }
 
+  .journey-badge {
+    background: #4f46e5; color: #fff;
+    border-radius: 9999px; padding: 1px 7px;
+    font-size: 10px; font-weight: 700;
+    display: inline-block; margin-top: 3px;
+    line-height: 1.4;
+  }
+  .journey-badge.sub { background: #7c3aed; }
+
   .section-label { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #9ca3af; margin-bottom: 4px; margin-top: 16px; }
   .divider { border: none; border-top: 1px solid #f3f4f6; margin: 14px 0; }
 </style>
@@ -59,6 +68,11 @@
       <option value="5">★★★★★</option>
       <option value="4">★★★★☆以上</option>
       <option value="3">★★★☆☆以上</option>
+      <optgroup label="研究旅程">
+        <option value="主軸">主軸研究会（①〜④）</option>
+        <option value="副次">副次研究会（⑤〜⑦）</option>
+        <option value="研究旅程">全研究旅程（①〜⑦）</option>
+      </optgroup>
     </select>
     <span id="count-label" class="text-sm text-gray-400 whitespace-nowrap"></span>
   </div>
@@ -114,6 +128,9 @@ function applyFilter() {
   else if (mode === "5") data = data.filter(p => p.stars.startsWith("★★★★★"));
   else if (mode === "4") data = data.filter(p => p.stars && starCount(p.stars) >= 4);
   else if (mode === "3") data = data.filter(p => p.stars && starCount(p.stars) >= 3);
+  else if (mode === "主軸") data = data.filter(p => p.category && p.category.includes("主軸"));
+  else if (mode === "副次") data = data.filter(p => p.category && p.category.includes("副次"));
+  else if (mode === "研究旅程") data = data.filter(p => p.category && (p.category.includes("主軸") || p.category.includes("副次")));
 
   if (q) {
     data = data.filter(p =>
@@ -163,6 +180,8 @@ function renderGrid(data) {
       <div class="p-2">
         <p class="font-bold text-gray-900 text-xs leading-tight mb-0.5">${p.name}</p>
         ${p.stars ? `<p class="text-xs">${renderStars(p.stars)}</p>` : ""}
+        ${p.category && p.category.includes("主軸") ? `<span class="journey-badge">主軸${p.category.match(/①|②|③|④/)?.[0] || ""}</span>` : ""}
+        ${p.category && p.category.includes("副次") ? `<span class="journey-badge sub">副次${p.category.match(/⑤|⑥|⑦/)?.[0] || ""}</span>` : ""}
         <p class="text-xs text-gray-400 leading-tight mt-1 line-clamp-2">${p.expertise.split(" / ")[0]}</p>
       </div>
     </div>

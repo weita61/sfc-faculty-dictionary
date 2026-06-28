@@ -43,6 +43,19 @@ def parse_md(path):
             rank_num = int(rec_match.group(1))
             stars = rec_match.group(2)
 
+        # カテゴリ（研究旅程）を抽出
+        cat_match = re.search(r"、?〔(.+?)〕", sec)
+        category = cat_match.group(1) if cat_match else ""
+
+        # 〔〕形式の推薦行からも rank/stars を取得
+        alt_rec_match = re.search(r"\*\*推薦 #(\d+) / (★+[☆]*) 〔", sec)
+        if alt_rec_match and not rec_match:
+            rank_num = int(alt_rec_match.group(1))
+            stars = alt_rec_match.group(2)
+        elif alt_rec_match:
+            rank_num = int(alt_rec_match.group(1))
+            stars = alt_rec_match.group(2)
+
         # 写真URL
         img_match = re.search(r"!\[.*?\]\((https?://[^\)]+)\)", sec)
         img = img_match.group(1) if img_match else ""
@@ -75,6 +88,7 @@ def parse_md(path):
 
         professors.append({
             "name": name,
+            "category": category,
             "rank": rank_num,
             "stars": stars,
             "img": img,
